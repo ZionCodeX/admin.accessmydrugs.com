@@ -91,6 +91,19 @@
 	
 
                 <td>
+                    <img src="{{ asset('/storage/app/drug.jpg') }}" alt="" title="">
+                    <img src="{{ Storage::url('drug.jpg') }}" />
+                    <img src="{{ Storage::url('/profile_image/drug.jpg') }}" />
+                    <img src="{{ Storage::url('/storage/app/public/drug.jpg') }}" />
+                    <img src="{{ Storage::url('/storage/app/drug.jpg') }}" />
+                    <img src="{{ Storage::url('storage/app/drug.jpg') }}" />
+
+                    <img src="{{ URL::asset('storage/app/drug.jpg') }}" />
+                    <img src="{{ URL::asset('/storage/app/drug.jpg') }}" />
+
+                    <img src="{{ asset('/storage/app/drug.jpg') }}" width="120px" hight="120px" alt="">
+                    <img src="{{ asset('storage/app/drug.jpg') }}" width="120px" hight="120px" alt="">
+
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
                         <img class="imgx" src = "{{ URL::asset('storage/app/image/default-image.jpg') }}?r=@php echo(rand()); @endphp" height="55px"></div>
