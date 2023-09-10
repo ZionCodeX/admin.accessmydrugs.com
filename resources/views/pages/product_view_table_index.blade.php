@@ -93,9 +93,9 @@
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
-                        <img class="imgx" src = '{{ URL::asset('storage/app/image/default-image.jpg') }}?r=@php echo(rand()); @endphp")' height="55px"></div>
+                        <img class="imgx" src = "{{ URL::asset('storage/app/image/default-image.jpg') }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @else
-                        <img class="imgx" src = '{{ URL::asset('storage/app/product_image') }}/{{ $product->product_image }}?r=@php echo(rand()); @endphp")' height="55px"></div>
+                        <img class="imgx" src = "{{ URL::asset('storage/app/product_image') }}/{{ $product->product_image }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @endif
                     {{-- IMAGE BOX ENDS --}}
                 </td>
