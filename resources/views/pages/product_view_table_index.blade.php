@@ -91,6 +91,8 @@
         
                 <img src="{{ Storage::url('storage/product_image/drug.jpg') }}" />
                 <img src="{{ asset('storage/storage/product_image/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ URL::asset('public/storage/product_image/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ asset('public/drug.jpg') }}" style="height: 50px;width:100px;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
