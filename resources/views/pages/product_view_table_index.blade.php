@@ -88,7 +88,7 @@
             <tr>
             
                 <td>{{ $loop->iteration }}</td>
-
+        
                 <img src="{{ url('storage/product_image/drug.jpg') }}" alt="" title="" />
                 <td>
                     {{-- IMAGE BOX STARTS --}}
