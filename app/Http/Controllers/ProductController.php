@@ -436,11 +436,11 @@ class ProductController extends Controller
         //$data['products'] = DB::table('products')->where('pid_product', $pid_product)->where('xstatus',1)->first();
         //////////////////// REQUIRED CORE DATA ////////////////////
 
-
+  
         \Session::flash('success','Product visibility state was successfully updated!');
         return redirect()->route('product_view_table_index', $data);
 
-    }
+    }  
 
         
 
