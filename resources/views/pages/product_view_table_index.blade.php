@@ -89,8 +89,8 @@
             
                 <td>{{ $loop->iteration }}</td>
         
-                <img src="{{ Storage::url('public/product_image/drug.jpg') }}" />
-                <img src="{{ asset('public/storage/product_image/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ Storage::url('storage/product_image/drug.jpg') }}" />
+                <img src="{{ asset('storage/storage/product_image/drug.jpg') }}" style="height: 50px;width:100px;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
