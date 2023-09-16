@@ -88,10 +88,6 @@
             <tr>
             
                 <td>{{ $loop->iteration }}</td>
-	
-                <img class="imgx" src = "{{ URL::to('storage/product_image/drug.jpg') }}" />
-
-                <img class="imgx" src = "{{ URL::to('https://accessmydrugs.com/storage/product_image/drug.jpg') }}" />
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
