@@ -91,7 +91,10 @@
 	
                 <img src="{{ Storage::url('product_image/drug.jpg') }}" />
                 <img src="{{ asset('storage/product_image/drug.jpg') }}" style="height: 50px;width:100px;">
-                
+                <img src="storage/app/public/product_image/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="product_image/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="{{ storage_path('product_image/drug.jpg') }}" style="width: 100%; height: 100%;">
+
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
