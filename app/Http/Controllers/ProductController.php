@@ -113,7 +113,7 @@ class ProductController extends Controller
         //stores files in defualt directory: "storage/app/image" 
         //get file name using $file_name = $filex['name']
         //XController::xfile(REQUEST-DATA, FILE-ELEMENT-NAME, FILE-TYPES-ALLOWED, FILE-SIZE, FILE-LOCATION-IN-STORAGE, REQUIRED(Y=Yes, N=No))
-        $filex = XController::xfile($request, 'product_image', 'jpg,png,gif,svg,JPG,PNG,GIF,SVG', 2000, 'product_image', 'N');
+        $filex = XController::xfile($request, 'product_image', 'jpg,png,gif,svg,JPG,PNG,GIF,SVG', 2000, 'public/product_image', 'N');
         //:::::::::: SAVE IMAGE STOPS :::::::::://
 
         $pid_product =  'PRD'.XController::xhash(5).time();//generate random post id
@@ -222,7 +222,7 @@ class ProductController extends Controller
         //get file name using $file_name = $filex['name']
         //XController::xfile(REQUEST-DATA, FILE-ELEMENT-NAME, FILE-TYPES-ALLOWED, FILE-SIZE, FILE-LOCATION-IN-STORAGE, REQUIRED(Y=Yes, N=No))
         	if ($request->product_image == null){}else{
-            $filex = XController::xfile($request, 'product_image', 'jpg,png,gif,svg,JPG,PNG,GIF,SVG', 2000, 'product_image', 'N');
+            $filex = XController::xfile($request, 'product_image', 'jpg,png,gif,svg,JPG,PNG,GIF,SVG', 2000, 'public/product_image', 'N');
 
             DB::table('products')
                     ->where('pid_product', '=', $pid_product)

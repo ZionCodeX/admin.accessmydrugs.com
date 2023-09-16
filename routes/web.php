@@ -154,4 +154,5 @@ Route::get('/xclean', function() {
     $exitCode3 = Artisan::call('route:clear');
     $exitCode4 = Artisan::call('config:cache');
     dd('CACHE-CLEARED, VIEW-CLEARED, ROUTE-CLEARED & CONFIG-CACHED WAS SUCCESSFUL!');
+    //php artisan optimize:clear //clear bootstap cache
  });
