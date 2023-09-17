@@ -97,7 +97,7 @@
                 <img src="{{ url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
                 <img src="{{ url('https://admin.accessmydrugs.com/storage/app/public/images/product_image/drug.jpg') }}" alt="" title="" />
                 <img src="{{ url('https://admin.accessmydrugs.com/storage/images/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/images/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
