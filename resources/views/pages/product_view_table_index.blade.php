@@ -106,7 +106,7 @@
                             <img class="imgx" src = "{{ URL::asset('storage/product_image') }}/{{ $product->product_image }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @endif
                     {{-- IMAGE BOX ENDS --}}
-                </td>
+                </td>  
   
 
                 <td>
