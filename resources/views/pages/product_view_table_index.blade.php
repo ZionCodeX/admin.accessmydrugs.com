@@ -91,7 +91,6 @@
         
 
 
-                <img src="{{ URL::asset('storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
                 <img src="{{ asset('public/storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
 
                 <td>
