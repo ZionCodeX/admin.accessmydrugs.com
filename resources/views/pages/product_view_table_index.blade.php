@@ -91,7 +91,8 @@
         
 
 
-                <img src="{{ asset('public/storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg" style="width: 100%; height: 100%;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
