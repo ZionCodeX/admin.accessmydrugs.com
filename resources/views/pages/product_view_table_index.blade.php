@@ -112,12 +112,6 @@
                 <img src="{{ storage_path('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
 
 
-                <img src="{{ Storage::url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ Storage::url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ Storage::url('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ Storage::url('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ Storage::url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
