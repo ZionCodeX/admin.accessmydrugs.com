@@ -182,7 +182,7 @@
             <option value="sex_hormones_male"> Sex Hormones (Male) </option>
             <option value="sleeping_drugs"> Sleeping Drugs </option>
             <option value="tranquilizer"> Tranquilizer </option>
-            <option value="vitamins"> Vitamins </option>
+            <option value="vitamins_and_supplements"> Vitamins & Supplements </option>
         @endslot
 @endcomponent
 

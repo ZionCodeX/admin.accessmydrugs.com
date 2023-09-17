@@ -68,6 +68,7 @@
 							<form method="POST" action="{{ route('login') }}" class="form" id="kt_login_signin_formx">
 								@csrf
 
+
 								<div class="form-group mb-5">
 									<input id="email" type="email" class="form-control h-auto form-control-solid py-4 px-8 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
 									@error('email')
