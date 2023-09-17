@@ -89,7 +89,8 @@
             
                 <td>{{ $loop->iteration }}</td>
         
-                <img src="{{ asset('storage/product_image/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ asset('storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
+
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
