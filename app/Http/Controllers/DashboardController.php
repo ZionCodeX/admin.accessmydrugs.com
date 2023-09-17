@@ -37,6 +37,8 @@ class DashboardController extends Controller
     {
 
 
+
+
         $data = array();
         $pid_admin = Auth::user()->pid_admin;
         //////////////////// REQUIRED CORE DATA ////////////////////
