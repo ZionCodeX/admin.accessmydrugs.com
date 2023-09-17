@@ -89,7 +89,9 @@
             
                 <td>{{ $loop->iteration }}</td>
 
-      
+                <img src="{{ route('image.displayImage','drug.jpg') }}" alt="" title="">
+                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 10%; height: 10%;">
+
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
