@@ -89,7 +89,7 @@
             
                 <td>{{ $loop->iteration }}</td>
 
-                <img src="{{ public_path('images/drug.jpg')}}" alt="" />
+                <img src="{{ public_path('public/storage/images/drug.jpg')}}" alt="" />
                 <img src="https://admin.accessmydrugs.com/public/storage/images/product_image/drug.jpg" style="width: 100%; height: 100%;">
 
                 <img src="{{ url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
