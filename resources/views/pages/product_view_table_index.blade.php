@@ -90,14 +90,9 @@
                 <td>{{ $loop->iteration }}</td>
         
 
-                <img src="{{ url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
 
-
-
+                <img src="{{ URL::asset('storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ asset('public/storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
