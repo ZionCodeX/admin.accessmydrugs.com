@@ -62,7 +62,7 @@
 						<div class="login-signin">
 							<div class="mb-10">
 								<h3> ACCESS MY DRUGS</h3>
-								<div class="text-muted font-weight-bold" style="color:dark-grey;">AMD PORTAL LOGIN</div>
+								<div class="text-muted font-weight-bold" style="color:dark-grey;">X AMD PORTAL LOGIN</div>
 							</div>
 
 							<form method="POST" action="{{ route('login') }}" class="form" id="kt_login_signin_formx">

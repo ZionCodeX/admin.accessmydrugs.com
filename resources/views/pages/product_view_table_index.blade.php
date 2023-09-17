@@ -99,7 +99,7 @@
                         @endif
                     {{-- IMAGE BOX ENDS --}}
                 </td>
-
+  
 
                 <td>
                     {{ $product->product_name }} <br>
@@ -115,7 +115,7 @@
                 <td>{{ $product->product_price }}</td>
                 <td>{{ $product->product_quantity }}</td>
 
-                
+
                 <td>
                     @if (($product->product_visibility == '') || ($product->product_visibility == null) || ($product->product_visibility == 'show'))
                         <!--<span class="label label-inline label-light-success font-weight-bold">
