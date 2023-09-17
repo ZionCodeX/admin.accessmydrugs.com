@@ -105,12 +105,6 @@
                 <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
 
 
-                <img src="{{ storage_path('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ storage_path('storage/app/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ storage_path('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ storage_path('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ storage_path('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-
 
 
                 <td>
