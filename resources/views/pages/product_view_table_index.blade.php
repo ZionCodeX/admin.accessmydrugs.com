@@ -88,24 +88,15 @@
             <tr>
             
                 <td>{{ $loop->iteration }}</td>
-
-                				
-                <img src="{{ url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/storage/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
-
-
-                <img src="{{ route('image.displayImage','drug.jpg') }}" alt="" title="">
-                <img src="https://admin.accessmydrugs.com/public/storage/product_image/drug.jpg" style="width: 10%; height: 10%;">
+                
+                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 10%; height: 10%;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
-                            <img class="imgx" src = "{{ URL::asset('storage/image/default-image.jpg') }}?r=@php echo(rand()); @endphp" height="55px"></div>
+                            <img class="imgx" src = "{{ URL::asset('public/storage/images/default.jpg') }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @else
-                            <img class="imgx" src = "{{ URL::asset('storage/product_image') }}/{{ $product->product_image }}?r=@php echo(rand()); @endphp" height="55px"></div>
+                            <img class="imgx" src = "{{ URL::asset('public/storage/images') }}/{{ $product->product_image }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @endif
                     {{-- IMAGE BOX ENDS --}}
                 </td>  
