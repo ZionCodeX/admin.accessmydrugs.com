@@ -89,7 +89,7 @@
             
                 <td>{{ $loop->iteration }}</td>
                 
-                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 10%; height: 10%;">
+                <img src="https://admin.accessmydrugs.com/public/storage/images/default.jpg" style="width: 10%; height: 10%;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
