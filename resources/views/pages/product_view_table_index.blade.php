@@ -89,7 +89,35 @@
             
                 <td>{{ $loop->iteration }}</td>
         
-                <img src="{{ asset('storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ URL::asset('storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
+                <img src="{{ asset('public/storage/images/drug.jpg') }}" style="height: 50px;width:100px;">
+
+                <img src="storage/app/public/product_image/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/storage/images/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg" style="width: 100%; height: 100%;">
+
+                <img src="{{ url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
+
+
+                <img src="{{ storage_path('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ storage_path('storage/app/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ storage_path('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
+                <img src="{{ storage_path('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
+                <img src="{{ storage_path('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
+
+
+                <img src="{{ Storage::url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ Storage::url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ Storage::url('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
+                <img src="{{ Storage::url('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
+                <img src="{{ Storage::url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
+
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
