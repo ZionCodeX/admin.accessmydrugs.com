@@ -91,8 +91,7 @@
         
 
 
-                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 100%; height: 100%;">
-                <img src="https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/public/storage/product_image/drug.jpg" style="width: 100%; height: 100%;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
