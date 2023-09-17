@@ -89,12 +89,11 @@
             
                 <td>{{ $loop->iteration }}</td>
                 
-                <img src="https://admin.accessmydrugs.com/public/storage/images/default.jpg" style="width: 10%; height: 10%;">
 
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
-                            <img class="imgx" src = "{{ url('https://admin.accessmydrugs.com/public/storage/images/default.jpg') }}?r=@php echo(rand()); @endphp" height="55px"></div>
+                            <img class="imgx" src = "{{ URL::asset('public/storage/images/default.jpg') }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @else
                             <img class="imgx" src = "{{ URL::asset('public/storage/images') }}/{{ $product->product_image }}?r=@php echo(rand()); @endphp" height="55px"></div>
                         @endif
