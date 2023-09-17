@@ -91,14 +91,14 @@
         
 
 
-                <img src="https://admin.accessmydrugs.com/public/storage/images/drug.jpg" style="width: 100%; height: 100%;">
+                <img src="https://admin.accessmydrugs.com/public/storage/product_image/drug.jpg" style="width: 100%; height: 100%;">
 
                 <img src="{{ url('storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
                 <img src="{{ url('storage/app/product_image/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/storage/images/drug.jpg') }}" alt="" title="" />
-                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/images/drug.jpg') }}" alt="" title="" />
-                
+                <img src="{{ url('https://admin.accessmydrugs.com/storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('https://admin.accessmydrugs.com/storage/product_image/drug.jpg') }}" alt="" title="" />
+                <img src="{{ url('https://admin.accessmydrugs.com/public/storage/app/public/product_image/drug.jpg') }}" alt="" title="" />
+
                 <td>
                     {{-- IMAGE BOX STARTS --}}
                         @if (empty($product->product_image))
