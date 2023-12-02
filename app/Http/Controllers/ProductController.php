@@ -55,7 +55,7 @@ class ProductController extends Controller
         $imageContent = file_get_contents($url);
         \Illuminate\Support\Facades\Storage::disk('public/images')->put($image, $imageContent);
 
-        dd("Image Uploaded OK!!!");
+        dd("Image 3 Uploaded OK!!!");
 
     }
     
