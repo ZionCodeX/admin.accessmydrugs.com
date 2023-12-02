@@ -56,7 +56,7 @@ class ProductController extends Controller
         \Illuminate\Support\Facades\Storage::disk('public2')->put($image, $imageContent);
 
         dd("Image 3 Uploaded OK!!!");
-
+  
     }
     
 
