@@ -53,7 +53,7 @@ class ProductController extends Controller
 
         // Download image - this does not handle 404 or other webserver errors
         $imageContent = file_get_contents($url);
-        \Illuminate\Support\Facades\Storage::disk('public/images')->put($image, $imageContent);
+        \Illuminate\Support\Facades\Storage::disk('bulk')->put($image, $imageContent);
 
         dd("Image 3 Uploaded OK!!!");
 
