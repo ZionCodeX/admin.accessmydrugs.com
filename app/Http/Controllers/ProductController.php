@@ -38,7 +38,13 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
     */
 
+    //############################# POST CREATE INDEX #############################//
+    public function bulk_product_upload()
+    {
 
+        dd("Working OK!!!");
+
+    }
     
 
      
