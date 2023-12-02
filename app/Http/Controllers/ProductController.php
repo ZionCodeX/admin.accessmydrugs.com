@@ -42,7 +42,20 @@ class ProductController extends Controller
     public function bulk_product_upload()
     {
 
-        dd("Working OK!!!");
+        //$id = $request->id;
+
+        $id = "atsubox";
+
+        //$url = 'https://www.image.com/user/'.$id.'.jpg';
+        $url = 'https://pharmabay.ng/wp-content/uploads/2023/10/Bone-support_5.jpg';
+    
+        $image = $id.'.jpg';
+
+        // Download image - this does not handle 404 or other webserver errors
+        $imageContent = file_get_contents($url);
+        \Illuminate\Support\Facades\Storage::disk('public')->put($image, $imageContent);
+
+        dd("Image Uploaded OK!!!");
 
     }
     
