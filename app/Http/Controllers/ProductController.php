@@ -60,7 +60,7 @@ class ProductController extends Controller
             //GET ALL FIELDS FROM NEW DATA TABLE
             $title = $record->COL1;
             $content = $record->COL2;
-            $product_summary = $excerpt;$excerpt = $record->COL3;
+            $product_summary = $record->COL3;
             $categories = $record->COL4;
             $image_url = $record->COL5;
             $image_file = $record->COL6;
