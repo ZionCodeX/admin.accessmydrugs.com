@@ -48,13 +48,6 @@ class ProductController extends Controller
 
         foreach ($datax as $record) {
 
-            $URL = urldecode('http://www.greenbiz.com/sites/default/files/imagecache/wide_large/Woman_HORIZ.jpg?sunny=20$mal+1');
-            $image_name = (stristr($URL,'?',true))?stristr($URL,'?',true):$URL;
-            $pos = strrpos($image_name,'/');
-            $image_name = substr($image_name,$pos+1);
-            $extension = stristr($image_name,'.');
-
-
             $pid_product =  'PRD'.XController::xhash(10).time();//generate random post id
 
             //GET ALL FIELDS FROM NEW DATA TABLE
@@ -65,6 +58,13 @@ class ProductController extends Controller
             $image_url = $record->COL5;
             $image_file = $record->COL6;
             $price = $record->COL7;
+
+            //URL PROCESSING 
+            $URL = urldecode($image_url);
+            $image_name = (stristr($URL,'?',true))?stristr($URL,'?',true):$URL;
+            $pos = strrpos($image_name,'/');
+            $image_name = substr($image_name,$pos+1);
+            $extension = stristr($image_name,'.');
 
             //PROCESS SLUG TO PREVENT DUPLICATES
             $slug = \Str::slug($title);//convert title to slug
@@ -88,7 +88,7 @@ class ProductController extends Controller
             //PROCESS IMAGE FOR UPLOAD
             
 
-            echo $extension."<br>";
+            echo $image_name."<br>";
         }
 
         dd("OK");
