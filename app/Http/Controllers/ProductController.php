@@ -59,6 +59,12 @@ class ProductController extends Controller
             $image_file = $record->COL6;
             $price = $record->COL7;
 
+            //VALIDATE URL
+            if (filter_var($image_url, FILTER_VALIDATE_URL) === FALSE) {
+                //die('Not a valid URL');
+                $image_file = "https://admin.accessmydrugs.com/public/assets/media/logos/amd-default.jpg";
+            }
+
             //URL PROCESSING 
             $URL = urldecode($image_url);
             $image_name = (stristr($URL,'?',true))?stristr($URL,'?',true):$URL;
