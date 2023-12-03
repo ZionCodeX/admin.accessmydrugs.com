@@ -48,13 +48,23 @@ class ProductController extends Controller
 
         foreach ($datax as $record) {
 
+            $URL = urldecode('http://www.greenbiz.com/sites/default/files/imagecache/wide_large/Woman_HORIZ.jpg?sunny=20$mal+1');
+            $image_name = (stristr($URL,'?',true))?stristr($URL,'?',true):$URL;
+            $pos = strrpos($image_name,'/');
+            $image_name = substr($image_name,$pos+1);
+            $extension = stristr($image_name,'.');
+            $imagex = $image_name.".".$extension;
+
             $pid_product =  'PRD'.XController::xhash(10).time();//generate random post id
-            $product_title = $record->COL1;
-            /**$product_title = $record->COL1;
-            $product_title = $record->COL1;
-            $product_title = $record->COL1;
-            $product_title = $record->COL1;
-            $product_title = $record->COL1;**/
+
+            //GET ALL FIELDS FROM NEW DATA TABLE
+            $title = $record->COL1;
+            $content = $record->COL2;
+            $product_summary = $excerpt;$excerpt = $record->COL3;
+            $categories = $record->COL4;
+            $image_url = $record->COL5;
+            $image_file = $record->COL6;
+            $price = $record->COL7;
 
             //PROCESS SLUG TO PREVENT DUPLICATES
             $slug = \Str::slug($product_title);//convert title to slug
@@ -64,7 +74,21 @@ class ProductController extends Controller
                 $slug_check = DB::table('products')->where('product_slug', '=', $slug)->where('xstatus', '=', 1)->count();
             }
 
-            echo $slug."<br>";
+            //PROCESS PRODUCT DATA FOR UPLOAD
+            $product_name = $title;
+            $product_description = $content;
+            $product_summary = $excerpt;
+            $product_slug = $slug;
+            $product_category = $categories;
+            $product_sub_category1 = "";
+            $product_sub_category2 = "";
+            $product_price = $price;
+            $product_image = $record->COL5;
+
+            //PROCESS IMAGE FOR UPLOAD
+            
+
+            echo $imagex."<br>";
         }
 
         dd("OK");
