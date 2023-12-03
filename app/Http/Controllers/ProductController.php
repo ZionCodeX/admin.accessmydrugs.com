@@ -44,13 +44,27 @@ class ProductController extends Controller
 
         //$id = $request->id;
 
-        $datax = DB::table('products')->where('xstatus', 1)->get();
+        $datax = DB::table('product_import__updated_')->get();
 
         foreach ($datax as $record) {
-            echo $record->pid_product;
+
+            echo $record->COL4."<br>";
         }
 
         dd("OK");
+        
+        $pid_product =  'PRD'.XController::xhash(5).time();//generate random post id
+
+        $slug = \Str::slug($request->product_name);//convert title to slug
+
+        //check if slug already exists, then regenerate new value to avoid duplicate records
+        $slug_check = DB::table('products')->where('pid_product', '=', $pid_product)->where('xstatus', '=', 1)->count();
+        while($slug_check >= 1){
+            $slug = $slug.'-'.XController::xhash(5);
+            $slug_check = DB::table('products')->where('xstatus', '=', 1)->count();
+        }
+
+    
 
         $id = "atsubox";
 
