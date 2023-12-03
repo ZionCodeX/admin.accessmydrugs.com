@@ -44,6 +44,14 @@ class ProductController extends Controller
 
         //$id = $request->id;
 
+        $datax = DB::table('products')->where('xstatus', 1)->get();
+
+        foreach ($datax as $record) {
+            echo $record->pid_product;
+        }
+
+        dd("OK");
+
         $id = "atsubox";
 
         //$url = 'https://www.image.com/user/'.$id.'.jpg';
