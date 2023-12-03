@@ -83,26 +83,15 @@ class ProductController extends Controller
             $product_sub_category1 = "";
             $product_sub_category2 = "";
             $product_price = $price;
-            $product_image = $record->COL5;
+            $product_image = $slug.$extension;
 
             //PROCESS IMAGE FOR UPLOAD
             
 
-            echo $image_name."<br>";
+            echo $product_image."<br>";
         }
 
         dd("OK");
-
-        $pid_product =  'PRD'.XController::xhash(5).time();//generate random post id
-
-        $slug = \Str::slug($request->product_name);//convert title to slug
-
-        //check if slug already exists, then regenerate new value to avoid duplicate records
-        $slug_check = DB::table('products')->where('pid_product', '=', $pid_product)->where('xstatus', '=', 1)->count();
-        while($slug_check >= 1){
-            $slug = $slug.'-'.XController::xhash(5);
-            $slug_check = DB::table('products')->where('xstatus', '=', 1)->count();
-        }
 
     
 
