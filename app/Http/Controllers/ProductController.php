@@ -67,7 +67,7 @@ class ProductController extends Controller
             $price = $record->COL7;
 
             //PROCESS SLUG TO PREVENT DUPLICATES
-            $slug = \Str::slug($product_title);//convert title to slug
+            $slug = \Str::slug($title);//convert title to slug
             $slug_check = DB::table('products')->where('product_slug', '=', $slug)->where('xstatus', '=', 1)->count();
             while($slug_check >= 1){
                 $slug = $slug.'-'.XController::xhash(5);
