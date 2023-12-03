@@ -48,10 +48,11 @@ class ProductController extends Controller
 
         foreach ($datax as $record) {
 
+            $pid_product =  'PRD'.XController::xhash(5).time();//generate random post id
             $product_title = $record->COL1;
             $slug = \Str::slug($product_title);//convert title to slug
 
-            echo $slug."<br>";
+            echo $pid_product."<br>";
         }
 
         dd("OK");
