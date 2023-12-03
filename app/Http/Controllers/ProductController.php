@@ -62,7 +62,7 @@ class ProductController extends Controller
             //VALIDATE URL
             if (filter_var($image_url, FILTER_VALIDATE_URL) === FALSE) {
                 //die('Not a valid URL');
-                $image_file = "https://admin.accessmydrugs.com/public/assets/media/logos/amd-default.jpg";
+                $image_url = "https://admin.accessmydrugs.com/public/assets/media/logos/amd-default.jpg";
             }
 
             //URL PROCESSING 
