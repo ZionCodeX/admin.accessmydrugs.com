@@ -59,7 +59,7 @@ class ProductController extends Controller
             $categories = $record->COL4;
             $image_url = $record->COL5;
             $image_file = $record->COL6;
-            $price = $record->COL7;
+            $price = (float)$record->COL7;
 
             //VALIDATE URL
             if (filter_var($image_url, FILTER_VALIDATE_URL) === FALSE) {
