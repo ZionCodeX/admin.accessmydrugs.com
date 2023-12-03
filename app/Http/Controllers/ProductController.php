@@ -86,12 +86,13 @@ class ProductController extends Controller
             $product_image = $slug.$extension;
 
             //PROCESS IMAGE FOR UPLOAD
-            
+            $imageContent = file_get_contents($image_url);
+            \Illuminate\Support\Facades\Storage::disk('public')->put($product_image, $imageContent);
 
             echo $product_image."<br>";
         }
 
-        dd("OK");
+        dd("IMAGE UPLOADED!");
 
     
 
