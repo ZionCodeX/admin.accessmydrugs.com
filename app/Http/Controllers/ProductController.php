@@ -53,7 +53,7 @@ class ProductController extends Controller
             $pos = strrpos($image_name,'/');
             $image_name = substr($image_name,$pos+1);
             $extension = stristr($image_name,'.');
-            $imagex = $image_name.".".$extension;
+
 
             $pid_product =  'PRD'.XController::xhash(10).time();//generate random post id
 
@@ -88,7 +88,7 @@ class ProductController extends Controller
             //PROCESS IMAGE FOR UPLOAD
             
 
-            echo $imagex."<br>";
+            echo $extension."<br>";
         }
 
         dd("OK");
