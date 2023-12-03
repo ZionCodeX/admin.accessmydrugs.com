@@ -45,9 +45,11 @@ class ProductController extends Controller
         //$id = $request->id;
 
         $datax = DB::table('product_import__updated_')->get();
+        $countx = 1;
 
         foreach ($datax as $record) {
 
+            $countx = $countx + 1;
             $pid_product =  'PRD'.XController::xhash(10).time();//generate random post id
 
             //GET ALL FIELDS FROM NEW DATA TABLE
@@ -131,25 +133,10 @@ class ProductController extends Controller
 				]
 			);
 
-            echo $product_image."<br>";
         }
 
-        dd("IMAGES UPLOADED!");
+        dd($count." PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
 
-    
-
-        $id = "atsubox";
-
-        //$url = 'https://www.image.com/user/'.$id.'.jpg';
-        $url = 'https://pharmabay.ng/wp-content/uploads/2023/10/Bone-support_5.jpg';
-    
-        $image = $id.'.jpg';
-
-        // Download image - this does not handle 404 or other webserver errors
-        $imageContent = file_get_contents($url);
-        \Illuminate\Support\Facades\Storage::disk('public')->put($image, $imageContent);
-
-        dd("Image 3 Uploaded OK!!!");
 
     }
     
