@@ -95,10 +95,46 @@ class ProductController extends Controller
             $imageContent = file_get_contents($image_url);
             \Illuminate\Support\Facades\Storage::disk('public')->put($product_image, $imageContent);
 
+            //UPLOAD BULK PRODUCTS
+            DB::table('products')->insert(
+				[
+                    'pid_product' => $pid_product,
+					'seq' => 100,
+					'featured_timestamp' => '',
+					'pid_admin' => "ADMIN-AUTO-BULK-UPLOADER-001",
+					'product_name' => $product_name,
+					'product_price' => $product_price,
+					'product_price_old' => $product_price,
+					'product_price_wholesale' => $product_price,
+                    'product_slug' => $product_slug,
+					'product_category' => $product_category,
+                    'product_sub_category1' => $product_sub_category1,
+                    'product_sub_category2' => $product_sub_category2,
+					'product_description' => $product_description,
+                    'product_summary' => $product_summary,
+                    'product_tags' => $product_name,
+                    'product_quantity' => 100,
+                    'procurement_cost' => 0,
+					'shipping_cost' => 0,
+					'shipping_status' => null,
+                    'tax' => 7,
+                    'expiry_date' => null,
+					'product_visibility' => null,
+                    'product_image' => $product_image,
+                    'product_status' => '',
+                    'xstatus' => 1,
+                    'ext1' => '',
+                    'ext2' => '',
+                    'ext3' => '',
+					'created_at' => now(),
+					'updated_at' => now()
+				]
+			);
+
             echo $product_image."<br>";
         }
 
-        dd("IMAGE UPLOADED!");
+        dd("IMAGES UPLOADED!");
 
     
 
