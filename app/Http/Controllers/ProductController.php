@@ -135,7 +135,7 @@ class ProductController extends Controller
 
         }
 
-        dd($count." PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
+        dd($countx." PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
 
 
     }
