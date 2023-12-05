@@ -203,6 +203,85 @@ class ProductController extends Controller
 
 
 
+        //############################# POST CREATE PROX #############################//
+        public function product_category_create_form_prox(Request $request)
+        {
+            
+            //VALIDATE INPUT
+                $validator = Validator::make($request->all(), [
+                //'product_price' => 'numeric|min:2|max:5',
+                'category_name' => 'string|min:1|max:255',
+                    ]);
+                 
+                    if ($validator->fails()) {
+                                                // For example:
+                                                return redirect('pages/product_category_create_form_index')
+                                                        ->withErrors($validator)
+                                                        ->withInput();
+                                         
+                                                // Also handy: get the array with the errors
+                                                $validator->errors();
+                                         
+                                                // or, for APIs:
+                                                $validator->errors()->toJson();
+                                                exit();
+                                            }
+       
+            $data = array();
+            $pid_admin = Auth::user()->pid_admin;
+            //$admin_name = Auth::user()->first_name.' '.Auth::user()->last_name;
+    
+            //////////////////// REQUIRED CORE DATA ////////////////////
+            $data['pid_admin'] = $pid_admin;
+            //////////////////// REQUIRED CORE DATA ////////////////////
+    
+            $pid_category =  'CAT'.XController::xhash(5).time();//generate random post id
+            $category_name = $request->category_name;           
+            $slug = \Str::slug($category_name);//convert title to slug
+    
+
+            //check if slug already exists, then regenerate new value to avoid duplicate records
+            $category_check = DB::table('products_category')->where('category_name', '=', $category_name)->count();
+            while($category_check >= 1){
+                \Session::flash('danger','Product Category already exists!');
+                return redirect()->route('product_category_create_form_index', $data);
+                exit;
+            }
+
+            //check if slug already exists, then regenerate new value to avoid duplicate records
+            $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->count();
+            while($slug_check >= 1){
+                $slug = $slug.'-'.XController::xhash(5);
+                $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->count();
+            }
+    
+    
+                DB::table('products_category')->insert(
+                    [
+                        'pid_admin' => $pid_admin,
+                        'pid_category' => $pid_category,
+                        'category_name' => $category_name,
+                        'category_slug' => $slug,
+                        'status' => null,
+                        'xstatus' => 1,
+                        'ext1' => '',
+                        'ext2' => '',
+                        'ext3' => '',
+                        'created_at' => now(),
+                        'updated_at' => now()
+                    ]
+                );
+    
+    
+            $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->get();//posts
+    
+            \Session::flash('success','Product has been Successfully Added!');
+            return redirect()->route('product_view_table_index', $data);
+    
+        }
+
+
+
     //############################# POST CREATE PROX #############################//
     public function product_create_form_prox(Request $request)
     {

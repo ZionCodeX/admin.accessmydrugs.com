@@ -39,7 +39,7 @@
         <div class="card-header" style="">
 
           <div class="card-title">
-            <h3 class="card-label">Add Drug / Product
+            <h3 class="card-label">Add Drug / Product Category
             <i class="mr-2"></i>
             <small class=""> PRODUCT MANAGEMENT </small></h3>
           </div>
@@ -71,18 +71,18 @@
 @endif
 
 <!--##### XIS STANDARD FORM #####-->
-<form method="post" action="{{ route('product_create_form_prox'); }}"  enctype="multipart/form-data">
+<form method="post" action="{{ route('product_category_create_form_prox'); }}"  enctype="multipart/form-data">
     @csrf
 
   
 <!--##### TEXT PRODUCT NAME #####-->
 @component('form.text')
-    @slot('name') Category Name @endslot
+    @slot('name') category_name @endslot
     @slot('id') category_name @endslot
     @slot('label') Drug / Product Category Name @endslot
     @slot('value')@endslot
     @slot('placeholder') Enter Product Name @endslot
-    @slot('icon') fa fa-group @endslot
+    @slot('icon') fa fa-cube @endslot
     @slot('hint') @endslot
     @slot('maxlength') 200 @endslot
     @slot('required') required @endslot
@@ -97,7 +97,7 @@
 @component('form.button')
     @slot('name') submit @endslot
     @slot('id') submit @endslot
-    @slot('label') Add to Store @endslot
+    @slot('label') Add Category @endslot
     @slot('value') buttonx @endslot
     @slot('color') primary @endslot
     @slot('icon') fas fa-cubes @endslot
