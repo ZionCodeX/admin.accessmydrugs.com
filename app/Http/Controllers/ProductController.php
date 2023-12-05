@@ -551,6 +551,36 @@ class ProductController extends Controller
     }
 
 
+        //############################# PRODUCT VIEW TABLE INDEX #############################//
+        public function product_category_view_table_index()
+        {
+    
+            $data = array();
+            $pid_admin = Auth::user()->pid_admin;
+    
+            //////////////////// REQUIRED CORE DATA ////////////////////
+            $data['pid_admin'] = $pid_admin;
+    
+            //LIGHT LOADER
+            //$data['user'] = XRecordsController::records('user');
+            $data['product_categories'] = DB::table('products_category')->where('xstatus',1)->orderBy('id','DESC')->get();
+            //$data['posts'] = DB::table('posts')->where('status','published')->where('xstatus',1)->get();
+            //////////////////// REQUIRED CORE DATA ////////////////////
+    
+                //ORDERS COUNTER
+                $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
+                $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
+                $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();
+                $data['count_orders_in_transit'] = DB::table('orders')->where('status','=','in_transit')->where('xstatus', 1)->count();
+                $data['count_orders_arrived'] = DB::table('orders')->where('status','=','arrived')->where('xstatus', 1)->count();
+                $data['count_orders_delivered'] = DB::table('orders')->where('status','=','delivered')->where('xstatus', 1)->count();
+                $data['count_orders_cancelled'] = DB::table('orders')->where('status','=','cancelled')->where('xstatus', 1)->count();
+    
+            return view('pages/product_category_view_table_index', $data);exit;
+    
+        }
+
+
     //############################# PRODUCT VIEW TABLE INDEX #############################//
     public function product_view_list_index($pid_product)
     {
@@ -577,6 +607,9 @@ class ProductController extends Controller
         return view('pages/product_view_list_index', $data);exit;
 
     }
+
+
+
     
     
     
