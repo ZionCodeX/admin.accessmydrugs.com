@@ -146,7 +146,7 @@ class ProductController extends Controller
     //############################# PRODUCT CATEGORY CREATE INDEX #############################//
     public function product_category_create_form_index()
     {
-dd("working ok");
+
         $data = array();
         $pid_admin = Auth::user()->pid_admin;
 
