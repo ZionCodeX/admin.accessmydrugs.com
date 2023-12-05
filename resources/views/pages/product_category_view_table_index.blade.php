@@ -49,8 +49,11 @@
             <i class="ki ki-long-arrow-back icon-xs"></i>Back</a>
             <div class="btn-group">
              
-             <a href="{{ route('product_create_form_index') }}" class="btn btn-light-dark font-weight-bolder mr-2">
-            <i class="ki ki-long-plus icon-xs"></i>Add Drug /Product</a>
+             <a href="{{ route('product_category_create_form_index') }}" class="btn btn-light-dark font-weight-bolder mr-2">
+            <i class="ki ki-long-plus icon-xs"></i>Add Category</a>
+
+            <a href="{{ route('product_create_form_index') }}" class="btn btn-light-dark font-weight-bolder mr-2">
+                <i class="ki ki-long-plus icon-xs"></i>Add Drug /Product</a>
              
             </div>
           </div>
@@ -98,8 +101,8 @@
                 <td>{{ date('Y-m-d', strtotime($category->updated_at)) }}</td>
                 
                 <td>
-                    <a href="{{ url('product/category/view/'.$product->pid_product.'/list/index'); }}" class="btn"><i class="bi bi-list"></i></a>
-                    <a href="{{ url('product/category/update/'.$product->pid_product.'/form/index'); }}" class="btn"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ url('product/category/view/'.$category->pid_category.'/list/index'); }}" class="btn"><i class="bi bi-list"></i></a>
+                    <a href="{{ url('product/category/update/'.$category->pid_category.'/form/index'); }}" class="btn"><i class="bi bi-pencil-square"></i></a>
                     
                     <form action="{{ route('product_category_delete_record_prox'); }}" method="post" class="d-inline">
                         @csrf
