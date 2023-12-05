@@ -264,9 +264,9 @@ class ProductController extends Controller
                         'category_slug' => $slug,
                         'status' => null,
                         'xstatus' => 1,
-                        'ext1' => null,
-                        'ext2' => null,
-                        'ext3' => null,
+                        'ext1' => '',
+                        'ext2' => '',
+                        'ext3' => '',
                         'created_at' => now(),
                         'updated_at' => now()
                     ]
