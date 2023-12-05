@@ -111,6 +111,37 @@
 										</ul>
 									</div>
 
+
+
+
+									<div class="menu-submenu">
+										<i class="menu-arrow"></i>
+										<ul class="menu-subnav">
+
+											<li class="menu-item" aria-haspopup="true">
+												<a href="{{ route('product_category_create_form_index') }}" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">Add Category </span>
+												</a>
+											</li>
+
+                                            <li class="menu-item" aria-haspopup="true">
+												<a href="{{ route('product_view_table_index') }}" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">View Categories</span>
+												</a>
+											</li>
+
+										</ul>
+									</div>
+
+
+
+
 								</li>
 
 

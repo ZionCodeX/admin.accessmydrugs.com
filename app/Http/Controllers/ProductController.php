@@ -139,6 +139,37 @@ class ProductController extends Controller
 
 
     }
+
+
+
+
+    //############################# PRODUCT CATEGORY CREATE INDEX #############################//
+    public function product_category_create_form_index()
+    {
+
+        $data = array();
+        $pid_admin = Auth::user()->pid_admin;
+
+        //////////////////// REQUIRED CORE DATA ////////////////////
+        //heavy loaders
+        //$data['orders'] = XLoad::records('orders');
+        //$data['counts'] = XLoad::records('counts');
+        $data['pid_admin'] = $pid_admin;
+        //////////////////// REQUIRED CORE DATA ////////////////////
+
+        //ORDERS COUNTER
+        $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
+        $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
+        $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();
+        $data['count_orders_in_transit'] = DB::table('orders')->where('status','=','in_transit')->where('xstatus', 1)->count();
+        $data['count_orders_arrived'] = DB::table('orders')->where('status','=','arrived')->where('xstatus', 1)->count();
+        $data['count_orders_delivered'] = DB::table('orders')->where('status','=','delivered')->where('xstatus', 1)->count();
+        $data['count_orders_cancelled'] = DB::table('orders')->where('status','=','cancelled')->where('xstatus', 1)->count();
+            
+        return view('pages/product_category_create_form_index', $data);exit;
+
+    }
+
     
 
      
