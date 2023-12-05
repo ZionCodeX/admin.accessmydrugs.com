@@ -2,7 +2,7 @@
 @extends('layouts.base')
 
 
-@section('title', 'View Products')
+@section('title', 'View Products Category')
 
 
 @section('header_links')
@@ -39,9 +39,9 @@
         <div class="card-header" style="">
 
           <div class="card-title">
-            <h3 class="card-label">View Products in Store
+            <h3 class="card-label">View Products Category in Store
             <i class="mr-2"></i>
-            <small class=""> View Products</small></h3>
+            <small class=""> View Products Category</small></h3>
           </div>
 
           <div class="card-toolbar">

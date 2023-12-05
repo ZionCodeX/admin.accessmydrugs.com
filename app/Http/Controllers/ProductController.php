@@ -520,6 +520,32 @@ class ProductController extends Controller
 
 
 
+          //############################# PRODUCT DELETE PROX #############################//
+          public function product_category_delete_record_prox(Request $request)
+          {
+      
+              $data = array();
+              $pid_admin = Auth::user()->pid_admin;
+      
+     
+              $pid_category = $request->pid_category;
+     
+              //////////////////// REQUIRED CORE DATA ////////////////////
+              //light loaders
+              $data['products_category'] = DB::table('products_category')->where('pid_category',$pid_category)->first();
+     
+              DB::table('products_category')
+                         ->where('pid_category', $pid_category)
+                         ->delete();
+     
+              \Session::flash('success', 'Product Category has been successfully deleted!');
+     
+              return redirect()->route('product_category_view_table_index', $data);
+      
+          }   
+
+
+
 
     //############################# PRODUCT VIEW TABLE INDEX #############################//
     public function product_view_table_index()
