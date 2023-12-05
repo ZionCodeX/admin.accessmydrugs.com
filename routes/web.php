@@ -49,6 +49,7 @@ Route::post('product/category/create/form/index', [App\Http\Controllers\ProductC
 Route::post('product/category/create/form/prox', [App\Http\Controllers\ProductController::class, 'product_category_create_form_prox'])->name('product_category_create_form_prox');
 Route::get('bulkupload', [App\Http\Controllers\ProductController::class, 'bulk_product_upload'])->name('bulk_product_upload');
 
+
 //POST CONTROLLERS
 Route::get('post/create/form/index', [App\Http\Controllers\PostsController::class, 'post_create_form_index'])->name('post_create_form_index');
 Route::post('post/create/form/prox', [App\Http\Controllers\PostsController::class, 'post_create_form_prox'])->name('post_create_form_prox');

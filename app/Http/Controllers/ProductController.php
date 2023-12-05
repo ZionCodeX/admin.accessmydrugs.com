@@ -146,7 +146,7 @@ class ProductController extends Controller
     //############################# PRODUCT CATEGORY CREATE INDEX #############################//
     public function product_category_create_form_index()
     {
-
+dd("working ok");
         $data = array();
         $pid_admin = Auth::user()->pid_admin;
 
@@ -156,7 +156,7 @@ class ProductController extends Controller
         //$data['counts'] = XLoad::records('counts');
         $data['pid_admin'] = $pid_admin;
         //////////////////// REQUIRED CORE DATA ////////////////////
-
+  
         //ORDERS COUNTER
         $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
         $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
