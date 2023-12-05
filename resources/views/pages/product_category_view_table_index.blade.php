@@ -50,7 +50,7 @@
             <div class="btn-group">
              
              <a href="{{ route('product_category_create_form_index') }}" class="btn btn-light-dark font-weight-bolder mr-2">
-            <i class="ki ki-long-plus icon-xs"></i>Add Category</a>
+            <i class="ki ki-long-plus icon-xs"></i>Add New Category</a>
 
             <a href="{{ route('product_create_form_index') }}" class="btn btn-light-dark font-weight-bolder mr-2">
                 <i class="ki ki-long-plus icon-xs"></i>Add Drug /Product</a>
@@ -108,6 +108,7 @@
                         @csrf
 
                         <input type="hidden" name="pid_category" value="{{ $category->pid_category }}" />
+                        <input type="hidden" name="category_slug" value="{{ $category->category_slug }}" />
                         <button class="btn danger" type="submit"><i class="bi bi-trash-fill"></i></button>
                         <input type="checkbox" required >
                     </form>

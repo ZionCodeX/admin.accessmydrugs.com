@@ -173,7 +173,7 @@ class ProductController extends Controller
     
 
      
-    //############################# POST CREATE INDEX #############################//
+    //############################# PRODUCT CREATE INDEX #############################//
     public function product_create_form_index()
     {
 
@@ -201,9 +201,39 @@ class ProductController extends Controller
     }
 
 
+    
+
+        //############################# PRODUCT CREATE INDEX #############################//
+        public function product_category_update_form_index()
+        {
+    
+            $data = array();
+            $pid_admin = Auth::user()->pid_admin;
+    
+            //////////////////// REQUIRED CORE DATA ////////////////////
+            //heavy loaders
+            //$data['orders'] = XLoad::records('orders');
+            //$data['counts'] = XLoad::records('counts');
+            $data['pid_admin'] = $pid_admin;
+            //////////////////// REQUIRED CORE DATA ////////////////////
+            $data['products_category'] = DB::table('products_category')->where('pid_category',$pid_category)->first();
+    
+            //ORDERS COUNTER
+            $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
+            $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
+            $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();
+            $data['count_orders_in_transit'] = DB::table('orders')->where('status','=','in_transit')->where('xstatus', 1)->count();
+            $data['count_orders_arrived'] = DB::table('orders')->where('status','=','arrived')->where('xstatus', 1)->count();
+            $data['count_orders_delivered'] = DB::table('orders')->where('status','=','delivered')->where('xstatus', 1)->count();
+            $data['count_orders_cancelled'] = DB::table('orders')->where('status','=','cancelled')->where('xstatus', 1)->count();
+                
+            return view('pages/product_category_update_form_index', $data);exit;
+    
+        }
 
 
-        //############################# POST CREATE PROX #############################//
+
+        //############################# CATEGORY CREATE PROX #############################//
         public function product_category_create_form_prox(Request $request)
         {
             
@@ -279,6 +309,93 @@ class ProductController extends Controller
             return redirect()->route('product_category_view_table_index', $data);
     
         }
+
+
+        //############################# CATEGORY UPDATE PROX #############################//
+        public function product_category_update_form_prox(Request $request)
+        {
+            
+            //VALIDATE INPUT
+                $validator = Validator::make($request->all(), [
+                //'product_price' => 'numeric|min:2|max:5',
+                'category_name' => 'string|min:1|max:255',
+                    ]);
+                 
+                    if ($validator->fails()) {
+                                                // For example:
+                                                return redirect('pages/product_category_create_form_index')
+                                                        ->withErrors($validator)
+                                                        ->withInput();
+                                         
+                                                // Also handy: get the array with the errors
+                                                $validator->errors();
+                                         
+                                                // or, for APIs:
+                                                $validator->errors()->toJson();
+                                                exit();
+                                            }
+       
+            $data = array();
+            $pid_admin = Auth::user()->pid_admin;
+            //$admin_name = Auth::user()->first_name.' '.Auth::user()->last_name;
+    
+            //////////////////// REQUIRED CORE DATA ////////////////////
+            $data['pid_admin'] = $pid_admin;
+            //////////////////// REQUIRED CORE DATA ////////////////////
+    
+            $pid_category =  'CAT'.XController::xhash(5).time();//generate random post id
+            $category_name = $request->category_name;           
+            $slug = \Str::slug($category_name);//convert title to slug
+    
+
+            //check if slug already exists, then regenerate new value to avoid duplicate records
+            $category_check1 = 0; $category_check2 = 0; $category_check3 = 0; 
+            $category_check1 = DB::table('products')->where('product_category', '=', $category_slug)->count();
+            $category_check2 = DB::table('products')->where('product_sub_category1', '=', $category_slug)->count();
+            $category_check3 = DB::table('products')->where('product_sub_category2', '=', $category_slug)->count();
+            $category_checkx = $category_check1 + $category_check2 + $category_check3;
+
+            while($category_checkx >= 1){
+                \Session::flash('failed','Product Category already in use, cannot edit category');
+                return redirect()->route('product_category_create_form_index', $data);
+                exit;
+            } 
+
+            //check if slug already exists, then regenerate new value to avoid duplicate records
+            $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->count();
+            while($slug_check >= 1){
+                $slug = $slug.'-'.XController::xhash(5);
+                $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->count();
+            }
+    
+    
+                DB::table('products_category')->insert(
+                    [
+                        'pid_admin' => $pid_admin,
+                        'pid_category' => $pid_category,
+                        'category_name' => $category_name,
+                        'category_slug' => $slug,
+                        'status' => null,
+                        'xstatus' => 1,
+                        'ext1' => '',
+                        'ext2' => '',
+                        'ext3' => '',
+                        'created_at' => now(),
+                        'updated_at' => now()
+                    ]
+                );
+    
+    
+            $data['product_categories'] = DB::table('products_category')->where('xstatus',1)->orderBy('id','DESC')->get();//posts
+    
+            \Session::flash('success','Product Category has been Successfully Added!');
+            return redirect()->route('product_category_view_table_index', $data);
+    
+        }
+
+
+
+
 
 
 
@@ -529,11 +646,25 @@ class ProductController extends Controller
       
      
               $pid_category = $request->pid_category;
+              $category_slug = $request->category_slug;
      
               //////////////////// REQUIRED CORE DATA ////////////////////
               //light loaders
               $data['products_category'] = DB::table('products_category')->where('pid_category',$pid_category)->first();
      
+                          //check if slug already exists, then regenerate new value to avoid duplicate records
+            $category_check1 = 0; $category_check2 = 0; $category_check3 = 0; 
+            $category_check1 = DB::table('products')->where('product_category', '=', $category_slug)->count();
+            $category_check2 = DB::table('products')->where('product_sub_category1', '=', $category_slug)->count();
+            $category_check3 = DB::table('products')->where('product_sub_category2', '=', $category_slug)->count();
+            $category_checkx = $category_check1 + $category_check2 + $category_check3;
+
+            while($category_checkx >= 1){
+                \Session::flash('failed','Product Category already in use, cannot delete category. You have to delete the associated product first.');
+                return redirect()->route('product_category_view_table_index', $data);
+                exit;
+            } 
+
               DB::table('products_category')
                          ->where('pid_category', $pid_category)
                          ->delete();
