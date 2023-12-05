@@ -128,7 +128,7 @@
 											</li>
 
                                             <li class="menu-item" aria-haspopup="true">
-												<a href="{{ route('product_view_table_index') }}" class="menu-link">
+												<a href="{{ route('product_category_view_table_index') }}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
