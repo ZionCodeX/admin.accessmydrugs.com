@@ -204,12 +204,12 @@ class ProductController extends Controller
     
 
         //############################# PRODUCT CREATE INDEX #############################//
-        public function product_category_update_form_index()
+        public function product_category_update_form_index(Request $request)
         {
     
             $data = array();
             $pid_admin = Auth::user()->pid_admin;
-    
+            $pid_category = $request->pid_category;
             //////////////////// REQUIRED CORE DATA ////////////////////
             //heavy loaders
             //$data['orders'] = XLoad::records('orders');
