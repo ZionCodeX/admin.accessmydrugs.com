@@ -47,6 +47,10 @@ Route::post('product/feature/record/prox', [App\Http\Controllers\ProductControll
 Route::get('product/visibility/{pid_product}/{product_visibility}/prox', [App\Http\Controllers\ProductController::class, 'product_visibility_prox'])->name('product_visibility_prox');
 Route::get('product/category/create/form/index', [App\Http\Controllers\ProductController::class, 'product_category_create_form_index'])->name('product_category_create_form_index');
 Route::post('product/category/create/form/prox', [App\Http\Controllers\ProductController::class, 'product_category_create_form_prox'])->name('product_category_create_form_prox');
+Route::get('product/category/update/{pid_category}/form/index', [App\Http\Controllers\ProductController::class, 'product_category_update_form_index'])->name('product_category_update_form_index');
+Route::post('product/category/update/form/prox', [App\Http\Controllers\ProductController::class, 'product_category_update_form_prox'])->name('product_category_update_form_prox');
+Route::get('product/category/view/{category_slug}/list/index', [App\Http\Controllers\ProductController::class, 'product_category_view_list_index'])->name('product_category_view_list_index');
+Route::post('product/category/delete/record/prox', [App\Http\Controllers\ProductController::class, 'product_category_delete_record_prox'])->name('product_category_delete_record_prox');
 Route::get('bulkupload', [App\Http\Controllers\ProductController::class, 'bulk_product_upload'])->name('bulk_product_upload');
 
 
