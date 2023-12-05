@@ -74,6 +74,7 @@
 <form method="post" action="{{ route('product_category_update_form_prox'); }}"  enctype="multipart/form-data">
     @csrf
 
+    <input type="hidden" name="pid_category" value="{{ $products_category->pid_category ?? '' }}" />
     <input type="hidden" name="category_slug" value="{{ $products_category->category_slug ?? '' }}" />
   
 <!--##### TEXT PRODUCT NAME #####-->
