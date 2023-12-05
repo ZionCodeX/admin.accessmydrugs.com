@@ -187,7 +187,7 @@ class ProductController extends Controller
         $data['pid_admin'] = $pid_admin;
         //////////////////// REQUIRED CORE DATA ////////////////////
 
-        $data['product_categories'] = DB::table('products_category')->where('xstatus',1)->orderBy('id','DESC')->get();
+        $data['product_categories'] = DB::table('products_category')->where('xstatus',1)->orderBy('category_name','DESC')->get();
 
         //ORDERS COUNTER
         $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
