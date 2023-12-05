@@ -243,7 +243,7 @@ class ProductController extends Controller
             //check if slug already exists, then regenerate new value to avoid duplicate records
             $category_check = DB::table('products_category')->where('category_name', '=', $category_name)->count();
             while($category_check >= 1){
-                \Session::flash('success','Product Category already exists!');
+                \Session::flash('warning','Product Category already exists!');
                 return redirect()->route('product_category_create_form_index', $data);
                 exit;
             } 
