@@ -243,10 +243,10 @@ class ProductController extends Controller
             //check if slug already exists, then regenerate new value to avoid duplicate records
             $category_check = DB::table('products_category')->where('category_name', '=', $category_name)->count();
             while($category_check >= 1){
-                \Session::flash('danger','Product Category already exists!');
+                \Session::flash('success','Product Category already exists!');
                 return redirect()->route('product_category_create_form_index', $data);
                 exit;
-            }
+            } 
 
             //check if slug already exists, then regenerate new value to avoid duplicate records
             $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->count();
@@ -264,9 +264,9 @@ class ProductController extends Controller
                         'category_slug' => $slug,
                         'status' => null,
                         'xstatus' => 1,
-                        'ext1' => '',
-                        'ext2' => '',
-                        'ext3' => '',
+                        'ext1' => null,
+                        'ext2' => null,
+                        'ext3' => null,
                         'created_at' => now(),
                         'updated_at' => now()
                     ]
