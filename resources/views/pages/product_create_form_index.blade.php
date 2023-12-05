@@ -142,47 +142,9 @@
     @slot('required') required @endslot
         @slot('options')
             <option value=""> - Select Category - </option>
-            <option value="general"> General </option>
-            <option value="analgesics"> Analgesics </option>
-            <option value="antacids"> Antacids </option>
-            <option value="antianxiety_drugs"> Antianxiety Drugs </option>
-            <option value="antiarrhythmics"> Antiarrhythmics </option>
-            <option value="antibacterials"> Antibacterials </option>
-            <option value="antibiotics"> Antibiotics </option>
-            <option value="anticoagulants_and_thrombolytics"> Anticoagulants and Thrombolytics </option>
-            <option value="anticonvulsants"> Anticonvulsants </option>
-            <option value="antidepressants"> Antidepressants </option>
-            <option value="antidiarrheals"> Antidiarrheals </option>
-            <option value="antiemetics"> Antiemetics </option>
-            <option value="antifungals"> Antifungals </option>
-            <option value="antihistamines"> Antihistamines </option>
-            <option value="antihypertensives"> Antihypertensives </option>
-            <option value="anti-inflammatories"> Anti-Inflammatories </option>
-            <option value="antineoplastics"> Antineoplastics </option>
-            <option value="antipsychotics"> Antipsychotics </option>
-            <option value="antipyretics"> Antipyretics </option>
-            <option value="antivirals"> Antivirals </option>
-            <option value="barbiturates"> Barbiturates </option>
-            <option value="beta-blockers"> Beta-Blockers </option>
-            <option value="bronchodilators"> Bronchodilators </option>
-            <option value="cold_cure"> Cold Cures </option>
-            <option value="corticosteroids"> Corticosteroids </option>
-            <option value="cough_suppressants"> Cough Suppressants </option>
-            <option value="cytotoxics"> Cytotoxics </option>
-            <option value="decongestants"> Decongestants </option>
-            <option value="diuretics"> Diuretics </option>
-            <option value="expectorant"> Expectorant </option>
-            <option value="hormones"> Hormones </option>
-            <option value="hypoglycemics"> Hypoglycemics </option>
-            <option value="immunosuppressives"> Immunosuppressives </option>
-            <option value="laxatives"> Laxatives </option>
-            <option value="muscle_relaxants"> Muscle Relaxants </option>
-            <option value="sedatives"> Sedatives </option>
-            <option value="sex_hormones_female"> Sex Hormones (Female) </option>
-            <option value="sex_hormones_male"> Sex Hormones (Male) </option>
-            <option value="sleeping_drugs"> Sleeping Drugs </option>
-            <option value="tranquilizer"> Tranquilizer </option>
-            <option value="vitamins_and_supplements"> Vitamins & Supplements </option>
+            @foreach ($product_categories as $category)
+                <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
+            @endforeach
         @endslot
 @endcomponent
 

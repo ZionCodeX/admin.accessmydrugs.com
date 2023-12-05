@@ -187,6 +187,8 @@ class ProductController extends Controller
         $data['pid_admin'] = $pid_admin;
         //////////////////// REQUIRED CORE DATA ////////////////////
 
+        $data['product_categories'] = DB::table('products_category')->where('xstatus',1)->orderBy('id','DESC')->get();
+
         //ORDERS COUNTER
         $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
         $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
@@ -356,6 +358,7 @@ class ProductController extends Controller
             $category_check3 = DB::table('products')->where('product_sub_category2', '=', $category_slug)->count();
             $category_checkx = $category_check1 + $category_check2 + $category_check3;
 
+            //if slug already exists, then use the same original slug name instead of the slug name created from the category name.
             if($category_checkx >= 1){
                     $slug = $category_slug;
             }else{}
