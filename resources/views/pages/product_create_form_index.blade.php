@@ -149,6 +149,45 @@
 @endcomponent
 
 
+
+<!--##### PRODUCT SUB CATEGORY 1 SELECT #####-->
+@component('form.select')
+    @slot('name') product_sub_category1 @endslot
+    @slot('id') product_sub_category1 @endslot
+    @slot('label') Sub Category 1 @endslot
+    @slot('value')@endslot
+    @slot('icon') fas fa-layer-group @endslot
+    @slot('hint') Select Options @endslot
+    @slot('required') required @endslot
+        @slot('options')
+            <option value=""> - Select Category 1 - </option>
+            @foreach ($product_categories as $category)
+                <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
+            @endforeach
+        @endslot
+@endcomponent
+
+
+
+<!--##### PRODUCT SUB CATEGORY 2 SELECT #####-->
+@component('form.select')
+    @slot('name') product_sub_category2 @endslot
+    @slot('id') product_sub_category2 @endslot
+    @slot('label') Sub Category 2 @endslot
+    @slot('value')@endslot
+    @slot('icon') fas fa-layer-group @endslot
+    @slot('hint') Select Options @endslot
+    @slot('required') required @endslot
+        @slot('options')
+            <option value=""> - Select Category 2 - </option>
+            @foreach ($product_categories as $category)
+                <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
+            @endforeach
+        @endslot
+@endcomponent
+
+
+
 <!--##### HTML TEXT AREA EDITOR CK-EDITOR #####-->
 @component('form.textarea')
     @slot('name') product_description @endslot
