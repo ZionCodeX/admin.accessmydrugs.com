@@ -45,7 +45,7 @@ Route::get('product/view/table/index', [App\Http\Controllers\ProductController::
 Route::get('product/view/{product_slug}/list/index', [App\Http\Controllers\ProductController::class, 'product_view_list_index'])->name('product_view_list_index');
 Route::post('product/feature/record/prox', [App\Http\Controllers\ProductController::class, 'product_feature_record_prox'])->name('product_feature_record_prox');
 Route::get('product/visibility/{pid_product}/{product_visibility}/prox', [App\Http\Controllers\ProductController::class, 'product_visibility_prox'])->name('product_visibility_prox');
-Route::post('product/category/create/form/index', [App\Http\Controllers\ProductController::class, 'product_category_create_form_index'])->name('product_category_create_form_index');
+Route::get('product/category/create/form/index', [App\Http\Controllers\ProductController::class, 'product_category_create_form_index'])->name('product_category_create_form_index');
 Route::post('product/category/create/form/prox', [App\Http\Controllers\ProductController::class, 'product_category_create_form_prox'])->name('product_category_create_form_prox');
 Route::get('bulkupload', [App\Http\Controllers\ProductController::class, 'bulk_product_upload'])->name('bulk_product_upload');
 
