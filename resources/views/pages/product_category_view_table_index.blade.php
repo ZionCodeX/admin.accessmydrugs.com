@@ -101,7 +101,7 @@
                 <td>{{ date('Y-m-d', strtotime($category->updated_at)) }}</td>
                 
                 <td>
-                    <a href="{{ url('product/category/view/'.$category->pid_category.'/list/index'); }}" class="btn"><i class="bi bi-list"></i></a>
+                    <!--<a href="{{ url('product/category/view/'.$category->pid_category.'/list/index'); }}" class="btn"><i class="bi bi-list"></i></a>-->
                     <a href="{{ url('product/category/update/'.$category->pid_category.'/form/index'); }}" class="btn"><i class="bi bi-pencil-square"></i></a>
                     
                     <form action="{{ route('product_category_delete_record_prox'); }}" method="post" class="d-inline">
