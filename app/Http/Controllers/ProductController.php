@@ -275,7 +275,7 @@ class ProductController extends Controller
     
             $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->get();//posts
     
-            \Session::flash('success','Product has been Successfully Added!');
+            \Session::flash('success','Product Category has been Successfully Added!');
             return redirect()->route('product_view_table_index', $data);
     
         }
