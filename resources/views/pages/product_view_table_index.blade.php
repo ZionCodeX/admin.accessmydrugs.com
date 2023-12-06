@@ -109,6 +109,15 @@
                         <button type="submit" class="btn btn-light-dark btn-sm">Feature this product</button>
                         <input type="checkbox" required >
                     </form>
+
+                    <hr>
+                    <i><b>Categories:</b></i><br>
+                    <ul>
+                        <li>{{ $product->product_category }} </li>
+                        <li>{{ $product->product_sub_category1 }} </li>
+                        <li>{{ $product->product_sub_category1 }} </li>
+                    </ul>
+
                 </td>
                 
 
