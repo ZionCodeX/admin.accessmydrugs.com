@@ -461,6 +461,8 @@ class ProductController extends Controller
 					'product_price_wholesale' => $request->input('product_price_wholesale'),
                     'product_slug' => $slug,
 					'product_category' => $request->input('product_category'),
+                    'product_sub_category1' => $request->input('product_sub_category1'),
+                    'product_sub_category2' => $request->input('product_sub_category2'),
 					'product_description' => $request->input('product_description'),
                     'product_summary' => $request->input('product_summary'),
                     'product_tags' => $request->input('product_tags'),
