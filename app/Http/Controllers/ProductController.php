@@ -478,7 +478,7 @@ class ProductController extends Controller
         $data['product_sub_category2_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name");
         
         $box[] = DB::table('products_category')->where('category_slug',$request->product_category)->first();
-dd($box[0]["category_name"]);
+dd($box[0]);
         //INSERT RECORDS TO PRODUCTS TABLE
         if((DB::table('products')->latest('seq')->first('seq')) == null){$seq = 0;}else{
         $seq = (int)(DB::table('products')->latest('seq')->first('seq')->seq) + 10;//record sequence update
