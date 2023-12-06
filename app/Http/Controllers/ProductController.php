@@ -89,12 +89,12 @@ class ProductController extends Controller
             $split_category_array[] = explode('>', $categories);
 
             $categories = $split_category_array[0];
-            $sub_category1 = $split_category_array[1];
-            $sub_category2 = $split_category_array[2];
+            //$sub_category1 = $split_category_array[1];
+            //$sub_category2 = $split_category_array[2];
 
             echo $categories."<br>";
-            echo $sub_category1."<br>";
-            echo $sub_category2."<br>";
+            //echo $sub_category1."<br>";
+            //echo $sub_category2."<br>";
 
             //PROCESS PRODUCT DATA FOR UPLOAD
             $product_name = $title;
