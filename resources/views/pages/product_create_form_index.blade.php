@@ -161,6 +161,7 @@
     @slot('required') required @endslot
         @slot('options')
             <option value=""> - Select Category 1 - </option>
+            <option value=null> - None - </option>
             @foreach ($product_categories as $category)
                 <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
             @endforeach
@@ -180,6 +181,7 @@
     @slot('required') required @endslot
         @slot('options')
             <option value=""> - Select Category 2 - </option>
+            <option value=null> - None - </option>
             @foreach ($product_categories as $category)
                 <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
             @endforeach

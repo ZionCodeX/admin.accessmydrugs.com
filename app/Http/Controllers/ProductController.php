@@ -86,14 +86,28 @@ class ProductController extends Controller
             }
 
             //SPLIT CATEGORIES
+            $split_category_array = array();
             $split_category_array = explode('>', $categories);
-           // $categories = $split_category_array[0];
-            //$sub_category1 = $split_category_array[1];
-            //$sub_category2 = $split_category_array[2];
+            $categories = $split_category_array[0];
+            $sub_category1 = $split_category_array[1];
+            $sub_category2 = $split_category_array[2];
 
-            echo $split_category_array[0]."<br>";
-            echo $split_category_array[1]."<br>";
-            echo $split_category_array[2]."<br>";
+            if(!empty($split_category_array[0])){
+                $categories = $split_category_array[0];
+            }else{$categories = "General";}
+
+            if(!empty($split_category_array[1])){
+                $sub_category1 = $split_category_array[1];
+            }else{$sub_category1 = null;}
+
+            if(!empty($split_category_array[2])){
+                $sub_category2 = $split_category_array[2];
+            }else{$sub_category2 = null;}
+
+            echo $categories."<br>";
+            echo $sub_category1."<br>";
+            echo $sub_category2."<br>";
+
             //echo $sub_category1."<br>";
             //echo $sub_category2."<br>";
 

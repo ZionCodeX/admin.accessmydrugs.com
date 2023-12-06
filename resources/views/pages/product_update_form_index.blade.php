@@ -167,6 +167,7 @@
         @slot('options')
             <option value="{{ $product->product_sub_category1 ?? '' }}" selected> {{ $product->product_sub_category1 ?? '' }} </option>
             <option value=""> - Select Sub Category 1 - </option>
+            <option value=null> - None - </option>
             @foreach ($product_categories as $category)
                 <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
             @endforeach
@@ -187,6 +188,7 @@
         @slot('options')
         <option value="{{ $product->product_sub_category2 ?? '' }}" selected> {{ $product->product_sub_category2 ?? '' }} </option>
             <option value=""> - Select Sub Category 2 - </option>
+            <option value=null> - None - </option>
             @foreach ($product_categories as $category)
                 <option value="{{ $category->category_slug }}"> {{ $category->category_name }} </option>
             @endforeach
