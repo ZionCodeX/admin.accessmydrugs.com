@@ -473,9 +473,9 @@ class ProductController extends Controller
         }
 
         //GET CATEGORY NAMES FROM CATEGORY RECORDS
-        $data['product_category_name'] = DB::table('products_category')->where('category_slug',$request->product_category)->first("category_name");
-        $data['product_sub_category1_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category1)->first("category_name");
-        $data['product_sub_category2_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name");
+        $product_category_name = DB::table('products_category')->where('category_slug',$request->product_category)->first("category_name");
+        $product_sub_category1_name = DB::table('products_category')->where('category_slug',$request->product_sub_category1)->first("category_name");
+        $product_sub_category2_name = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name");
         
 
         //INSERT RECORDS TO PRODUCTS TABLE
@@ -495,9 +495,9 @@ class ProductController extends Controller
 					'product_price_old' => $request->input('product_price_old'),
 					'product_price_wholesale' => $request->input('product_price_wholesale'),
                     'product_slug' => $slug,
-                    'product_category_name' => $data['product_category_name'],
-                    'product_sub_category1_name' => $data['product_sub_category1_name'],
-                    'product_sub_category2_name' => $data['product_sub_category2_name'],
+                    'product_category_name' => $product_category_name,
+                    'product_sub_category1_name' => $product_sub_category1_name,
+                    'product_sub_category2_name' => $product_sub_category2_name,
 					'product_category' => $request->input('product_category'),
                     'product_sub_category1' => $request->input('product_sub_category1'),
                     'product_sub_category2' => $request->input('product_sub_category2'),
