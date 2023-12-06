@@ -38,7 +38,10 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
     */
 
-    //############################# POST CREATE INDEX #############################//
+
+
+
+    //############################# BULK PRODUCT UPLOAD PROCESSOR #############################//
     public function bulk_product_upload()
     {
 
@@ -82,19 +85,30 @@ class ProductController extends Controller
                 $slug_check = DB::table('products')->where('product_slug', '=', $slug)->where('xstatus', '=', 1)->count();
             }
 
+            //SPLIT CATEGORIES
+            $split_category_array = explode(',', $categories);
+
+            $categories = $split_category_array[0];
+            $sub_category1 = $split_category_array[1];
+            $sub_category2 = $split_category_array[2];
+
+            echo $categories."<br>";
+            echo $sub_category1."<br>";
+            echo $sub_category2."<br>";
+
             //PROCESS PRODUCT DATA FOR UPLOAD
             $product_name = $title;
             $product_description = $content;
             $product_summary = $excerpt;
             $product_slug = $slug;
             $product_category = $categories;
-            $product_sub_category1 = "";
-            $product_sub_category2 = "";
+            $product_sub_category1 = $sub_category1;
+            $product_sub_category2 = $sub_category2;
             $product_price = $price;
             $product_image = $slug.$extension;
 
             //PROCESS IMAGE FOR UPLOAD
-            $imageContent = file_get_contents($image_url);
+            /**$imageContent = file_get_contents($image_url);
             \Illuminate\Support\Facades\Storage::disk('public')->put($product_image, $imageContent);
 
             //UPLOAD BULK PRODUCTS
@@ -132,10 +146,10 @@ class ProductController extends Controller
 					'updated_at' => now()
 				]
 			);
-
+**/
         }
 
-        dd($countx." PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
+        dd($split_category_array." PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
 
 
     }
