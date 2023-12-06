@@ -114,17 +114,15 @@
                     <i><b>Categories:</b></i><br>
 
                     <ul>
-                        @if (($product->product_category != "") || ($product->product_category != " ") || ($product->product_category != null))
                             <li>{{ $product->product_category }} </li>
-                        @endif
 
-                        @if (($product->product_sub_category1 !== "") || ($product->product_sub_category1 !== " ") || ($product->product_sub_category1 !== null))
+                        @if (($product->product_sub_category1 == "") || ($product->product_sub_category1 == " ") || ($product->product_sub_category1 == null))
+                            
+                        @else
                             <li>{{ $product->product_sub_category1 }} </li>
                         @endif
 
-                        @if (($product->product_sub_category2 != "") || ($product->product_sub_category2 != " ") || ($product->product_sub_category2 != null))
-                            <li>{{ $product->product_sub_category2 }} </li>
-                        @endif
+
                     </ul>
 
                 </td>
