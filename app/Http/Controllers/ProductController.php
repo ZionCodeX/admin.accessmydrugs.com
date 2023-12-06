@@ -91,7 +91,7 @@ class ProductController extends Controller
             //$sub_category1 = $split_category_array[1];
             //$sub_category2 = $split_category_array[2];
 
-            echo $split_category_array."<br>";
+            echo $split_category_array[0]."<br>";
             //echo $sub_category1."<br>";
             //echo $sub_category2."<br>";
 
