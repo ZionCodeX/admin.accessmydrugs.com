@@ -105,7 +105,7 @@
                    <b>{{ $product->product_name }}</b>  <br>
 
                     <hr>
-                    Categories<br>
+               
 
                     <ul>
                             <li>{{ $product->product_category }} </li>
