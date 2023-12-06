@@ -477,8 +477,7 @@ class ProductController extends Controller
         $data['product_sub_category1_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category1)->first("category_name")->category_name;
         $data['product_sub_category2_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name")->category_name;
         
-        $box = DB::table('products_category')->where('category_slug',$request->product_category)->first();
-dd($data['product_category_name']);
+
         //INSERT RECORDS TO PRODUCTS TABLE
         if((DB::table('products')->latest('seq')->first('seq')) == null){$seq = 0;}else{
         $seq = (int)(DB::table('products')->latest('seq')->first('seq')->seq) + 10;//record sequence update
@@ -606,9 +605,9 @@ dd($data['product_category_name']);
 
 
         //GET CATEGORY NAMES FROM CATEGORY RECORDS
-        $data['product_category_name'] = DB::table('products_category')->where('category_slug',$request->product_category)->first("category_name");
-        $data['product_sub_category1_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category1)->first("category_name");
-        $data['product_sub_category2_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name");
+        $data['product_category_name'] = DB::table('products_category')->where('category_slug',$request->product_category)->first("category_name")->category_name;
+        $data['product_sub_category1_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category1)->first("category_name")->category_name;
+        $data['product_sub_category2_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name")->category_name;
         
 
 
