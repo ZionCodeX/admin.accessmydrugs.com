@@ -86,13 +86,12 @@ class ProductController extends Controller
             }
 
             //SPLIT CATEGORIES
-            $split_category_array[] = explode('>', $categories);
-
-            $categories = $split_category_array[0];
+            $split_category_array = explode('>', $categories);
+           // $categories = $split_category_array[0];
             //$sub_category1 = $split_category_array[1];
             //$sub_category2 = $split_category_array[2];
 
-            echo $categories."<br>";
+            echo $split_category_array."<br>";
             //echo $sub_category1."<br>";
             //echo $sub_category2."<br>";
 
