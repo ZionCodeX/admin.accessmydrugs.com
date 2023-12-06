@@ -111,7 +111,7 @@
                     </form>
 
                     <hr>
-                    <i><b>Categories:</b></i><br>
+                    <i>Categories:</i><br>
 
                     <ul>
                             <li>{{ $product->product_category }} </li>
