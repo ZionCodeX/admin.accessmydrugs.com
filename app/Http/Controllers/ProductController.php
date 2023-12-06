@@ -472,6 +472,14 @@ class ProductController extends Controller
             $slug_check = DB::table('products')->where('xstatus', '=', 1)->count();
         }
 
+        //GET CATEGORY NAMES FROM CATEGORY RECORDS
+        $data['product_category_name'] = DB::table('products_category')->where('category_slug',$request->product_category)->first("category_name");
+        $data['product_sub_category1_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category1)->first("category_name");
+        $data['product_sub_category2_name'] = DB::table('products_category')->where('category_slug',$request->product_sub_category2)->first("category_name");
+        
+dd(data['product_category_name']);
+
+
         if((DB::table('products')->latest('seq')->first('seq')) == null){$seq = 0;}else{
         $seq = (int)(DB::table('products')->latest('seq')->first('seq')->seq) + 10;//record sequence update
         }
@@ -488,6 +496,9 @@ class ProductController extends Controller
 					'product_price_old' => $request->input('product_price_old'),
 					'product_price_wholesale' => $request->input('product_price_wholesale'),
                     'product_slug' => $slug,
+                    'product_category_name' => $request->input('product_category_name'),
+                    'product_sub_category1_name' => $request->input('product_sub_category1_name'),
+                    'product_sub_category2_name' => $request->input('product_sub_category2_name'),
 					'product_category' => $request->input('product_category'),
                     'product_sub_category1' => $request->input('product_sub_category1'),
                     'product_sub_category2' => $request->input('product_sub_category2'),
@@ -604,6 +615,9 @@ class ProductController extends Controller
 					'product_price_old' => $request->input('product_price_old'),
 					'product_price_wholesale' => $request->input('product_price_wholesale'),					
                     'product_slug' => $slug,
+                    'product_category_name' => $request->product_category_name,
+                    'product_sub_category1_name' => $request->product_sub_category1_name,
+                    'product_sub_category2_name' => $request->product_sub_category2_name,
 					'product_category' => $request->product_category,
                     'product_sub_category1' => $request->product_sub_category1,
                     'product_sub_category2' => $request->product_sub_category2,
