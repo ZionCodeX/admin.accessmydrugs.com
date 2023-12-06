@@ -102,7 +102,7 @@
   
 
                 <td>
-                    {{ $product->product_name }} <br>
+                   <b>{{ $product->product_name }}</b>  <br>
 
                     <hr>
                     Categories<br>
