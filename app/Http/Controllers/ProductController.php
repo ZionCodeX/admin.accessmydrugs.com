@@ -163,7 +163,7 @@ class ProductController extends Controller
 **/
         }
 
-        dd($split_category_array." PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
+        dd(" PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
 
 
     }
