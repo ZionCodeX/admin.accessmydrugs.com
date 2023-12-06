@@ -91,11 +91,14 @@ class ProductController extends Controller
             //$sub_category1 = $split_category_array[1];
             //$sub_category2 = $split_category_array[2];
 
-            echo $split_category_array[0]."<br>";exit;
+            echo $split_category_array[0]."<br>";
+            echo $split_category_array[1]."<br>";
+            echo $split_category_array[2]."<br>";
             //echo $sub_category1."<br>";
             //echo $sub_category2."<br>";
 
             //PROCESS PRODUCT DATA FOR UPLOAD
+            /**
             $product_name = $title;
             $product_description = $content;
             $product_summary = $excerpt;
@@ -105,6 +108,7 @@ class ProductController extends Controller
             $product_sub_category2 = $sub_category2;
             $product_price = $price;
             $product_image = $slug.$extension;
+            **/
 
             //PROCESS IMAGE FOR UPLOAD
             /**$imageContent = file_get_contents($image_url);
