@@ -103,12 +103,6 @@
 
                 <td>
                     {{ $product->product_name }} <br>
-                    <form action="{{ route('product_feature_record_prox'); }}" method="post" class="d-inline">
-                        @csrf
-                        <input type="hidden" name="pid_product" value="{{ $product->pid_product }}" />
-                        <button type="submit" class="btn btn-light-dark btn-sm">Feature this product</button>
-                        <input type="checkbox" required >
-                    </form>
 
                     <hr>
                     Categories<br>
@@ -131,6 +125,15 @@
 
 
                     </ul>
+
+                    <hr>
+
+                    <form action="{{ route('product_feature_record_prox'); }}" method="post" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="pid_product" value="{{ $product->pid_product }}" />
+                        <button type="submit" class="btn btn-light-dark btn-sm">Feature this product</button>
+                        <input type="checkbox" required >
+                    </form>
 
                 </td>
                 
