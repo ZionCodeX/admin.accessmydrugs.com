@@ -123,6 +123,13 @@
                         @endif
 
 
+                        @if (($product->product_sub_category2 == "") || ($product->product_sub_category2 == " ") || ($product->product_sub_category2 == null))
+                            
+                        @else
+                            <li>{{ $product->product_sub_category2 }} </li>
+                        @endif
+
+
                     </ul>
 
                 </td>
