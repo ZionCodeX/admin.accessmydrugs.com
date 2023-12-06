@@ -508,6 +508,7 @@ class ProductController extends Controller
         //////////////////// REQUIRED CORE DATA ////////////////////
 
         $data['product'] = DB::table('products')->where('pid_product',$pid_product)->first();//load single record
+        $data['product_categories'] = DB::table('products_category')->where('xstatus',1)->orderBy('id','DESC')->get();
 
 
             //ORDERS COUNTER
