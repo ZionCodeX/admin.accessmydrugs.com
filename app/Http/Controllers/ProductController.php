@@ -54,6 +54,7 @@ class ProductController extends Controller
 
             $countx = $countx + 1;
             $pid_product =  'PRD'.XController::xhash(10).time();//generate random post id
+            
 
             //GET ALL FIELDS FROM NEW DATA TABLE
             $title = $record->COL1;
@@ -79,10 +80,10 @@ class ProductController extends Controller
 
             //PROCESS SLUG TO PREVENT DUPLICATES
             $slug = \Str::slug($title);//convert title to slug
-            $slug_check = DB::table('products')->where('product_slug', '=', $slug)->where('xstatus', '=', 1)->count();
+            $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->where('xstatus', '=', 1)->count();
             while($slug_check >= 1){
                 $slug = $slug.'-'.XController::xhash(5);
-                $slug_check = DB::table('products')->where('product_slug', '=', $slug)->where('xstatus', '=', 1)->count();
+                $slug_check = DB::table('products_category')->where('category_slug', '=', $slug)->where('xstatus', '=', 1)->count();
             }
 
             //SPLIT CATEGORIES
@@ -90,39 +91,92 @@ class ProductController extends Controller
             $split_category_array = explode('>', $categories);
 
             if(!empty($split_category_array[0])){
-                $categories = $split_category_array[0];
-            }else{$categories = "General";}
+                $category_name = $split_category_array[0];
+                $category_slug = \Str::slug($category_name);
+
+                $pid_category =  'CAT'.XController::xhash(10).time();//generate random post id
+                $slug_check = DB::table('products_category')->where('category_slug', '=', $category_slug)->where('xstatus', '=', 1)->count();
+                if($slug_check >= 1){}else{
+                    DB::table('products_category')->insert(
+                        [
+                            'pid_admin' => "ADMIN-AUTO-BULK-UPLOADER-001",
+                            'pid_category' => $pid_category,
+                            'category_name' => $category_name,
+                            'category_slug' => $category_slug,
+                            'updated_at' => now()
+                        ]
+                        );
+                    }
+            }else{$category_name = "General"; $category_slug = null;}
+
+
 
             if(!empty($split_category_array[1])){
-                $sub_category1 = $split_category_array[1];
-            }else{$sub_category1 = null;}
+                $sub_category1_name = $split_category_array[1];
+                $sub_category1_slug = \Str::slug($sub_category1_name);
+
+                $pid_category =  'CAT'.XController::xhash(10).time();//generate random post id
+                $slug_check = DB::table('products_category')->where('category_slug', '=', $category_slug)->where('xstatus', '=', 1)->count();
+                if($slug_check >= 1){}else{
+                    DB::table('products_category')->insert(
+                        [
+                            'pid_admin' => "ADMIN-AUTO-BULK-UPLOADER-001",
+                            'pid_category' => $pid_category,
+                            'category_name' => $sub_category1_name,
+                            'category_slug' => $sub_category1_slug,
+                            'updated_at' => now()
+                        ]
+                        );
+                    }
+            }else{$sub_category1_name = null; $sub_category1_slug = null;}
+
+
 
             if(!empty($split_category_array[2])){
-                $sub_category2 = $split_category_array[2];
-            }else{$sub_category2 = null;}
+                $sub_category2_name = $split_category_array[2];
+                $sub_category2_slug = \Str::slug($sub_category2_name);
 
-            echo $categories."<br>";
-            echo $sub_category1."<br>";
-            echo $sub_category2."<br>";
+                $pid_category =  'CAT'.XController::xhash(10).time();//generate random post id
+                $slug_check = DB::table('products_category')->where('category_slug', '=', $category_slug)->where('xstatus', '=', 1)->count();
+                if($slug_check >= 1){}else{
+                    DB::table('products_category')->insert(
+                        [
+                            'pid_admin' => "ADMIN-AUTO-BULK-UPLOADER-001",
+                            'pid_category' => $pid_category,
+                            'category_name' => $sub_category2_name,
+                            'category_slug' => $sub_category2_slug,
+                            'updated_at' => now()
+                        ]
+                        );
+                    }
+            }else{$sub_category2_name = null; $sub_category2_slug = null;}
+
+
+            echo "<h3><b>".$countx."</b> of 1,609</h3><br>";
+            //echo $categories."<br>";
+            //echo $sub_category1."<br>";
+            //echo $sub_category2."<br>";
 
             //echo $sub_category1."<br>";
             //echo $sub_category2."<br>";
 
             //PROCESS PRODUCT DATA FOR UPLOAD
-            /**
             $product_name = $title;
             $product_description = $content;
             $product_summary = $excerpt;
             $product_slug = $slug;
-            $product_category = $categories;
-            $product_sub_category1 = $sub_category1;
-            $product_sub_category2 = $sub_category2;
+            $product_category_name = $category_name;
+            $product_sub_category1_name = $sub_category1_name;
+            $product_sub_category2_name = $sub_category2_name;
+            $product_category_slug = $category_slug;
+            $product_sub_category1_slug = $sub_category1_slug;
+            $product_sub_category2_slug = $sub_category2_slug;
             $product_price = $price;
             $product_image = $slug.$extension;
-            **/
+            
 
             //PROCESS IMAGE FOR UPLOAD
-            /**$imageContent = file_get_contents($image_url);
+            $imageContent = file_get_contents($image_url);
             \Illuminate\Support\Facades\Storage::disk('public')->put($product_image, $imageContent);
 
             //UPLOAD BULK PRODUCTS
@@ -137,9 +191,12 @@ class ProductController extends Controller
 					'product_price_old' => (float)$product_price,
 					'product_price_wholesale' => (float)$product_price,
                     'product_slug' => $product_slug,
-					'product_category' => $product_category,
-                    'product_sub_category1' => $product_sub_category1,
-                    'product_sub_category2' => $product_sub_category2,
+                    'product_category_name' => $product_category_name,
+                    'product_sub_category1_name' => $product_sub_category1_name,
+                    'product_sub_category2_name' => $product_sub_category2_name,
+					'product_category' => $product_category_slug,
+                    'product_sub_category1' => $product_sub_category1_slug,
+                    'product_sub_category2' => $product_sub_category2_slug,
 					'product_description' => $product_description,
                     'product_summary' => $product_summary,
                     'product_tags' => $product_name,
@@ -160,7 +217,7 @@ class ProductController extends Controller
 					'updated_at' => now()
 				]
 			);
-**/
+
         }
 
         dd(" PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
