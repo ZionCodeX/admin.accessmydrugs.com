@@ -155,14 +155,6 @@ class ProductController extends Controller
             }else{$sub_category2_name = null; $sub_category2_slug = null;}
 
 
-            echo "<h3><b>".$countx."</b> of 1,609</h3><br>";
-            //echo $categories."<br>";
-            //echo $sub_category1."<br>";
-            //echo $sub_category2."<br>";
-
-            //echo $sub_category1."<br>";
-            //echo $sub_category2."<br>";
-
             //PROCESS PRODUCT DATA FOR UPLOAD
             $product_name = $title;
             $product_description = $content;
@@ -222,6 +214,8 @@ class ProductController extends Controller
 			);
 
         }
+
+        echo "<h3><b>".$countx."</b> of 1,609</h3><br>";
 
         dd(" PRODUCTS AND IMAGES UPLOADED SUCCESSFULLY!!!");
 
