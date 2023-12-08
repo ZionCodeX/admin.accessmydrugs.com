@@ -148,6 +148,7 @@ class ProductController extends Controller
                             'category_name' => $sub_category2_name,
                             'category_slug' => $sub_category2_slug,
                             'xstatus' => 1,
+                            'created_at' => now(),
                             'updated_at' => now()
                         ]
                         );
