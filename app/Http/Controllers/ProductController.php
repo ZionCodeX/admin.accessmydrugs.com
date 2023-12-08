@@ -47,7 +47,7 @@ class ProductController extends Controller
 
         //$id = $request->id;
 
-        $datax = DB::table('products_export_1609_7')->get();
+        $datax = DB::table('products_export_1609_8')->get();
         $countx = 1;
 
         foreach ($datax as $record) {
@@ -796,7 +796,7 @@ class ProductController extends Controller
 
         //LIGHT LOADER
         //$data['user'] = XRecordsController::records('user');
-        $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->get();
+        $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->limit(10)->get();
         //$data['posts'] = DB::table('posts')->where('status','published')->where('xstatus',1)->get();
         //////////////////// REQUIRED CORE DATA ////////////////////
 
