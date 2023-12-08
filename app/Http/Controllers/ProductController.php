@@ -47,7 +47,7 @@ class ProductController extends Controller
 
         //$id = $request->id;
 
-        $datax = DB::table('product_import__updated_')->get();
+        $datax = DB::table('products_export_1609')->get();
         $countx = 1;
 
         foreach ($datax as $record) {
