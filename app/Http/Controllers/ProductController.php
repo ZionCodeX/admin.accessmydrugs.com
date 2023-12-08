@@ -103,7 +103,7 @@ class ProductController extends Controller
                             'pid_category' => $pid_category,
                             'category_name' => $category_name,
                             'category_slug' => $category_slug,
-                            'xstatus' => 1,
+                            'created_at' => now(),
                             'updated_at' => now()
                         ]
                         );
@@ -125,7 +125,7 @@ class ProductController extends Controller
                             'pid_category' => $pid_category,
                             'category_name' => $sub_category1_name,
                             'category_slug' => $sub_category1_slug,
-                            'xstatus' => 1,
+                            'created_at' => now(),
                             'updated_at' => now()
                         ]
                         );
@@ -147,7 +147,6 @@ class ProductController extends Controller
                             'pid_category' => $pid_category,
                             'category_name' => $sub_category2_name,
                             'category_slug' => $sub_category2_slug,
-                            'xstatus' => 1,
                             'created_at' => now(),
                             'updated_at' => now()
                         ]
