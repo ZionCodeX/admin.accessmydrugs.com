@@ -67,14 +67,14 @@ class ProductController extends Controller
             $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png";
         /////////////////// TRIM URL ////////////////////
         $url = $image_url;
-        $character = "|";
+        $character = "||";
 
         $positionx = strpos($url, $character);
 
         // Check if the special character is found
         if ($positionx !== false) {
             return true; // Special character exists in the string
-            $position = strpos($url, $character);
+            $position = strpos($url, $character);echo $position; exit;
             // If the character is found, extract the portion of the URL before it
             if ($position !== false) {
                 $trimmedUrl = substr($url, 0, $position);
