@@ -802,7 +802,7 @@ class ProductController extends Controller
     //############################# PRODUCT VIEW TABLE INDEX #############################//
     public function product_view_table_index($pages)
     {
-dd($pages);
+
         $data = array();
         $pid_admin = Auth::user()->pid_admin;
 
@@ -811,9 +811,11 @@ dd($pages);
 
         //LIGHT LOADER
         //$data['user'] = XRecordsController::records('user');
-        $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->limit(10)->get();
+        //$data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->limit(10)->get();
 
-        $data['pagination_links'] = DB::table('products')->paginate(10);
+        $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->paginate(10);
+
+        //$data['pagination_links'] = DB::table('products')->paginate(10);
         //$data['posts'] = DB::table('posts')->where('status','published')->where('xstatus',1)->get();
         //////////////////// REQUIRED CORE DATA ////////////////////
 

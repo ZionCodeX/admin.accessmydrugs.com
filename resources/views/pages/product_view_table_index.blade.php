@@ -180,8 +180,8 @@
         @endforeach
     </tbody><br>
 
-    {{ $pagination_links->links() }}
-    
+    {{ $products->links() }}
+
 </table>
 </div>
 
