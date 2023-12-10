@@ -46,17 +46,17 @@ class ProductController extends Controller
     {
 
         //$id = $request->id;
-        $url = "https://pharmabay.ng/wp-content/uploads/2023/08/OIP-11.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/OIP-12.jpeg";
+
+        //TRIM URL
+        $url = "https://pharmabay.ng/wp-content/uploads/2023/08/OIP-11.jpeg";
         $character = "||";
         $position = strpos($url, $character);
 
         // If the character is found, extract the portion of the URL before it
         if ($position !== false) {
             $trimmedUrl = substr($url, 0, $position);
-            //return $trimmedUrl;
         }
-
-        echo $trimmedUrl;exit;
+        $trimmedUrl;exit;
 
         $datax = DB::table('products_export_1609_15')->get();
         $countx = 1;
