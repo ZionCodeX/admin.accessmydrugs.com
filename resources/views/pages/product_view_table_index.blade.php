@@ -182,7 +182,10 @@
 
 </table>
 
-{{ $products->links() }}
+
+<div class="d-flex justify-content-center">
+    {{ $products->links() }} <!-- Renders pagination links with Bootstrap styles -->
+</div>
 
 </div>
 
