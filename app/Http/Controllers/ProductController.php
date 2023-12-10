@@ -800,9 +800,9 @@ class ProductController extends Controller
 
 
     //############################# PRODUCT VIEW TABLE INDEX #############################//
-    public function product_view_table_index()
+    public function product_view_table_index($pages)
     {
-
+dd($pages);
         $data = array();
         $pid_admin = Auth::user()->pid_admin;
 
