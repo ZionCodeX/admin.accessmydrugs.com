@@ -813,7 +813,7 @@ class ProductController extends Controller
         //$data['user'] = XRecordsController::records('user');
         $data['products'] = DB::table('products')->where('xstatus',1)->orderBy('id','DESC')->limit(10)->get();
 
-        $pagination_links = DB::table('products')->paginate(10);
+        $data['pagination_links'] = DB::table('products')->paginate(10);
         //$data['posts'] = DB::table('posts')->where('status','published')->where('xstatus',1)->get();
         //////////////////// REQUIRED CORE DATA ////////////////////
 
