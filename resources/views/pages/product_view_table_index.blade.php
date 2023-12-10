@@ -174,11 +174,14 @@
 
                 <br>
 
-                {{ $pagination_links->links() }}
+               
                 
             </tr>
         @endforeach
-    </tbody>
+    </tbody><br>
+
+    {{ $pagination_links->links() }}
+    
 </table>
 </div>
 
