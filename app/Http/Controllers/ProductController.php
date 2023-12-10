@@ -69,6 +69,10 @@ class ProductController extends Controller
         $url = $image_url;
         $character = "||";
 
+        $position = 10;
+        $trimmedUrl = substr($url, 0, $position);
+                echo $trimmedUrl; exit;
+
         $positionx = strpos($url, $character);
 
         // Check if the special character is found
