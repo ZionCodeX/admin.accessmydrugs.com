@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         $positionx = strpos($url, $character);
         $trimmedUrl = substr($url, 0, $positionx);
-        echo $trimmedUrl; exit;
+        echo $positionx; exit;
 
         // Check if the special character is found
         if ($positionx !== false) {
