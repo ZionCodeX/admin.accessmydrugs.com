@@ -801,7 +801,7 @@ class ProductController extends Controller
 
 
     //############################# PRODUCT VIEW TABLE INDEX #############################//
-    public function product_view_table_index($pages)
+    public function product_view_table_index()
     {
 
         $data = array();
