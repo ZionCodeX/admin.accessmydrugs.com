@@ -74,11 +74,12 @@ class ProductController extends Controller
         // Check if the special character is found
         if ($positionx !== false) {
             return true; // Special character exists in the string
-            $position = strpos($url, $character);echo $position; exit;
+            $position = strpos($url, $character);
             // If the character is found, extract the portion of the URL before it
-            if ($position !== false) {
+            //if ($position !== false) {
                 $trimmedUrl = substr($url, 0, $position);
-            }
+                echo $trimmedUrl; exit;
+            //}
             $urlx = $trimmedUrl."-----box1";;
         }else{$urlx = $url."-----box2";}
 
