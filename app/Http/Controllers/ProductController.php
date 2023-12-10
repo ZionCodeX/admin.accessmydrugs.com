@@ -64,49 +64,21 @@ class ProductController extends Controller
             $image_file = $record->COL6;
             $price = (float)$record->COL7;
 
-            $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png";
+            $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png||https://pharmabay.ng/wp-content/uploads/2023/08/SDSDSGSFDSDFSDF.jpeg";
             //$image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg";
         /////////////////// TRIM URL ////////////////////
         $url = $image_url;
         $character = "||";
 
 
+        //CLEAN UP THE URL WITH || SEPARATOR SYMBOLS LEAVING ONLY ONE URL
         $positionx = strpos($url, $character);
         if (($positionx !== false) || ($positionx >= 1)){
             $trimmedUrl = substr($url, 0, $positionx);
-            $urlx = $trimmedUrl."-----box1";
-        }else{$urlx = $url."-----box2";}
-
-        echo $urlx; exit;
-
-        // Check if the special character is found
-        if ($positionx !== false) {
-            return true; // Special character exists in the string
-            $position = strpos($url, $character);
-            // If the character is found, extract the portion of the URL before it
-            //if ($position !== false) {
-                $trimmedUrl = substr($url, 0, $position);
-                echo $trimmedUrl; exit;
-            //}
-            $urlx = $trimmedUrl."-----box1";
-        }else{$urlx = $url."-----box2";}
-
-        echo $urlx; exit;
-
-
-        // Check if the URL is valid
-        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-            return false; // Invalid URL
-            $position = strpos($url, $character);
-            // If the character is found, extract the portion of the URL before it
-            if ($position !== false) {
-                $trimmedUrl = substr($url, 0, $position);
-            }
-            $urlx = $trimmedUrl."-----box1";;
-        }else{$urlx = $url."-----box2";}
+            $urlx = $trimmedUrl;
+        }else{$urlx = $url;}
         $image_url = $urlx;
-
-
+echo $image_url;exit;
 
 
             //VALIDATE URL
