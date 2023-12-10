@@ -50,13 +50,19 @@ class ProductController extends Controller
         //TRIM URL
         $url = "https://pharmabay.ng/wp-content/uploads/2023/08/OIP-11.jpeg";
         $character = "||";
+        // Check if the URL is valid
+        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return false; // Invalid URL
         $position = strpos($url, $character);
 
         // If the character is found, extract the portion of the URL before it
         if ($position !== false) {
             $trimmedUrl = substr($url, 0, $position);
         }
-        $trimmedUrl;exit;
+        $url = $trimmedUrl;
+        }else{$url = $url;}
+
+        echo $url; exit;
 
         $datax = DB::table('products_export_1609_15')->get();
         $countx = 1;
