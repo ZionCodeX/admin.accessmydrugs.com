@@ -171,6 +171,10 @@
                         <input type="checkbox" required >
                     </form>
                 </td>
+
+                <br>
+
+                {{ $pagination_links->links() }}
                 
             </tr>
         @endforeach
