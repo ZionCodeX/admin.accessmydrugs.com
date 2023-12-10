@@ -70,15 +70,15 @@ class ProductController extends Controller
         $character = "||";
         // Check if the URL is valid
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-        return false; // Invalid URL
-        $position = strpos($url, $character);
-        // If the character is found, extract the portion of the URL before it
-        if ($position !== false) {
-            $trimmedUrl = substr($url, 0, $position);
-        }
-        $url = $trimmedUrl;
-        }else{$url = $url;}
-        $image_url = $url;
+            return false; // Invalid URL
+            $position = strpos($url, $character);
+            // If the character is found, extract the portion of the URL before it
+            if ($position !== false) {
+                $trimmedUrl = substr($url, 0, $position);
+            }
+            $urlx = $trimmedUrl;
+        }else{$urlx = $url;}
+        $image_url = $urlx;
 
 echo $image_url; exit;
 
