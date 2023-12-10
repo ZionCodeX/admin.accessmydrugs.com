@@ -108,7 +108,7 @@
                
 
                     <ul>
-                            <li>{{ $product->product_category }} </li>
+                        <li>{{ $product->product_category }} </li>
 
                         @if (($product->product_sub_category1 == "") || ($product->product_sub_category1 == " ") || ($product->product_sub_category1 == null))
                             
