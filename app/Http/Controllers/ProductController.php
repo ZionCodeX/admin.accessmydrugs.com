@@ -64,7 +64,8 @@ class ProductController extends Controller
             $image_file = $record->COL6;
             $price = (float)$record->COL7;
 
-            $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png";
+            //$image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png";
+            $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg";
         /////////////////// TRIM URL ////////////////////
         $url = $image_url;
         $character = "||";
@@ -72,7 +73,7 @@ class ProductController extends Controller
 
         $positionx = strpos($url, $character);
         $trimmedUrl = substr($url, 0, $positionx);
-        echo $positionx; exit;
+        echo $trimmedUrl; exit;
 
         // Check if the special character is found
         if ($positionx !== false) {
