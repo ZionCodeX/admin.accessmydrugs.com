@@ -7,7 +7,6 @@
 
 @section('header_links')
     @parent
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 @endsection
 
 
@@ -179,14 +178,15 @@
                 
             </tr>
         @endforeach
-    </tbody><br>
+        <div class="d-flex justify-content-center">
+            {{ $products->links() }} <!-- Renders pagination links with Bootstrap styles -->
+        </div>
+    </tbody>
 
 </table>
 
 
-<div class="d-flex justify-content-center">
-    {{ $products->links() }} <!-- Renders pagination links with Bootstrap styles -->
-</div>
+
 
 </div>
 
