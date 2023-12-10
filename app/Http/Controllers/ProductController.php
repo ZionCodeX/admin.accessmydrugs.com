@@ -46,24 +46,6 @@ class ProductController extends Controller
     {
 
         //$id = $request->id;
-
-        //TRIM URL
-        $url = "https://pharmabay.ng/wp-content/uploads/2023/08/OIP-11.jpeg";
-        $character = "||";
-        // Check if the URL is valid
-        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-        return false; // Invalid URL
-        $position = strpos($url, $character);
-
-        // If the character is found, extract the portion of the URL before it
-        if ($position !== false) {
-            $trimmedUrl = substr($url, 0, $position);
-        }
-        $url = $trimmedUrl;
-        }else{$url = $url;}
-
-        echo $url; exit;
-
         $datax = DB::table('products_export_1609_15')->get();
         $countx = 1;
 
@@ -81,6 +63,22 @@ class ProductController extends Controller
             $image_url = $record->COL5;
             $image_file = $record->COL6;
             $price = (float)$record->COL7;
+
+            
+        /////////////////// TRIM URL ////////////////////
+        $url = $image_url;
+        $character = "||";
+        // Check if the URL is valid
+        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return false; // Invalid URL
+        $position = strpos($url, $character);
+        // If the character is found, extract the portion of the URL before it
+        if ($position !== false) {
+            $trimmedUrl = substr($url, 0, $position);
+        }
+        $url = $trimmedUrl;
+        }else{$url = $url;}
+
 
             //VALIDATE URL
             if (filter_var($image_url, FILTER_VALIDATE_URL) === FALSE) {
