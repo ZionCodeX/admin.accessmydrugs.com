@@ -67,7 +67,7 @@ class ProductController extends Controller
             $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png";
         /////////////////// TRIM URL ////////////////////
         $url = $image_url;
-        $character = "||";
+        $character = "|";
 
         $positionx = strpos($url, $character);
 
