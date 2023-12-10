@@ -42,7 +42,7 @@ class ProductController extends Controller
 
 
     //############################# BULK PRODUCT UPLOAD PROCESSOR #############################//
-    public function bulk_product_upload()
+    public function bulk_product_upload_REMOVE_ME()
     {
 
         //$id = $request->id;
