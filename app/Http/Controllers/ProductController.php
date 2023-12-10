@@ -68,6 +68,23 @@ class ProductController extends Controller
         /////////////////// TRIM URL ////////////////////
         $url = $image_url;
         $character = "||";
+
+        $positionx = strpos($url, $character);
+
+        // Check if the special character is found
+        if ($positionx !== false) {
+            return true; // Special character exists in the string
+            $position = strpos($url, $character);
+            // If the character is found, extract the portion of the URL before it
+            if ($position !== false) {
+                $trimmedUrl = substr($url, 0, $position);
+            }
+            $urlx = $trimmedUrl."-----box1";;
+        }else{$urlx = $url."-----box2";}
+
+        echo $urlx; exit;
+
+
         // Check if the URL is valid
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
             return false; // Invalid URL
@@ -80,7 +97,7 @@ class ProductController extends Controller
         }else{$urlx = $url."-----box2";}
         $image_url = $urlx;
 
-echo $image_url; exit;
+
 
 
             //VALIDATE URL
