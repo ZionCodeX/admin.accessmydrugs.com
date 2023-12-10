@@ -76,8 +76,8 @@ class ProductController extends Controller
             if ($position !== false) {
                 $trimmedUrl = substr($url, 0, $position);
             }
-            $urlx = $trimmedUrl;
-        }else{$urlx = $url;}
+            $urlx = $trimmedUrl."-----box1";;
+        }else{$urlx = $url."-----box2";}
         $image_url = $urlx;
 
 echo $image_url; exit;
