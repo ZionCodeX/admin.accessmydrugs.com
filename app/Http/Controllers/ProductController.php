@@ -64,7 +64,7 @@ class ProductController extends Controller
             $image_file = $record->COL6;
             $price = (float)$record->COL7;
 
-            
+
         /////////////////// TRIM URL ////////////////////
         $url = $image_url;
         $character = "||";
@@ -78,6 +78,7 @@ class ProductController extends Controller
         }
         $url = $trimmedUrl;
         }else{$url = $url;}
+        $image_url = $url;
 
 
             //VALIDATE URL
