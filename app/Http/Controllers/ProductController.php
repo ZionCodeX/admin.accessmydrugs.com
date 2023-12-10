@@ -64,21 +64,20 @@ class ProductController extends Controller
             $image_file = $record->COL6;
             $price = (float)$record->COL7;
 
-            $image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png||https://pharmabay.ng/wp-content/uploads/2023/08/SDSDSGSFDSDFSDF.jpeg";
+            //$image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg||https://pharmabay.ng/wp-content/uploads/2023/08/R.png||https://pharmabay.ng/wp-content/uploads/2023/08/SDSDSGSFDSDFSDF.jpeg";
             //$image_url = "https://pharmabay.ng/wp-content/uploads/2023/08/XakY2xOuxSB2RdlL254sc3MQV67vwO7g6tz9dPBs.jpeg";
         /////////////////// TRIM URL ////////////////////
-        $url = $image_url;
-        $character = "||";
 
 
         //CLEAN UP THE URL WITH || SEPARATOR SYMBOLS LEAVING ONLY ONE URL
+        $url = $image_url;
+        $character = "||";
         $positionx = strpos($url, $character);
         if (($positionx !== false) || ($positionx >= 1)){
             $trimmedUrl = substr($url, 0, $positionx);
             $urlx = $trimmedUrl;
         }else{$urlx = $url;}
         $image_url = $urlx;
-echo $image_url;exit;
 
 
             //VALIDATE URL
