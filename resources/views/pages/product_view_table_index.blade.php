@@ -68,7 +68,7 @@
 </style>
 
 <div class="table-responsive">
-<table class="table table-bordered">
+<table class="table table-borderedx">
 
     <thead>
         <tr>
@@ -185,10 +185,9 @@
 
 
 
-<div class="row">
-    <div class="col-12 d-flex justify-content-center pt-4" class="li: { list-style: none; }">
+<div class="d-flex justify-content-center">
     {{ $products->links('pagination::bootstrap-4') }} <!-- Renders pagination links with Bootstrap styles -->
-</div></div>
+</div>
 
 
 </div>
