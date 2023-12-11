@@ -65,6 +65,10 @@
         object-fit: cover;
         border-radius: 10px;
         }
+
+        .pagination .page-item .page-link {
+    font-size: 12px; /* Adjust the font size as needed */
+}
 </style>
 
 <div class="table-responsive">
@@ -185,13 +189,15 @@
 
 
 
-
-</div>
-
-
 <div class="d-flex justify-content-center">
     {{ $products->links() }} <!-- Renders pagination links with Bootstrap styles -->
 </div>
+
+
+</div>
+
+
+
 
 <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
       </div>
