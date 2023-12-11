@@ -185,9 +185,10 @@
 
 
 
-<div class="d-flex justify-content-center">
+<div class="row">
+    <div class="col-12 d-flex justify-content-center pt-4" class="li: { list-style: none; }">
     {{ $products->links('pagination::bootstrap-4') }} <!-- Renders pagination links with Bootstrap styles -->
-</div>
+</div></div>
 
 
 </div>
