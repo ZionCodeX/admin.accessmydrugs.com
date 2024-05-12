@@ -67,7 +67,7 @@
                 <b>Product ID: </b>{{ $record->pid_order ?? 'NA' }} <br>
                 <b>Product Name: </b>{{ $record->first_name.' '.$record->last_name ?? 'NA' }} <br>
                 <!--<b> Qty: </b>1<br>-->
-                <b>Total Cost: </b>{{ $record->order_total_cost ?? 'NA' }} 
+                <b>Total Cost: </b>₦{{ $record->order_total_cost/100 ?? 'NA' }} 
             </td>
 
             
