@@ -57,7 +57,7 @@ class DashboardController extends Controller
         //////////////////// REQUIRED CORE DATA ////////////////////
         
             //ORDERS COUNTER
-            $data['count_orders_x'] = DB::table('orders')->where('status','=',$status)->where('xstatus', 1)->count();
+            //$data['count_orders_x'] = DB::table('orders')->where('status','=',$status)->where('xstatus', 1)->count();
             $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
             $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
             $data['count_orders_paid'] = DB::table('orders')->where('status','=','paid')->where('xstatus', 1)->count();
