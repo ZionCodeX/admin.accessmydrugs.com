@@ -76,6 +76,10 @@
                     <span class="label label-inline label-light-danger font-weight-bold" style="color: grey">
                         Attempted
                     </span>
+                @elseif ($record->status == 'ATTEMPTED')
+                    <span class="label label-inline label-light-success font-weight-bold" style="color: green">
+                        Paid
+                    </span>
                 @elseif ($record->status == 'PAID')
                     <span class="label label-inline label-light-success font-weight-bold" style="color: green">
                         Paid
