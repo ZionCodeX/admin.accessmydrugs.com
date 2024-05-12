@@ -107,29 +107,17 @@
             <td>{{ $record->created_at ?? '' }}</td>
 
             <td>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{ $loop->iteration }}" data-bs-toggle="dropdown" aria-expanded="false">
-                        Update Order Status
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton{{ $loop->iteration }}">
-                        <li><a class="dropdown-item active" href="#">Processing</a></li>
-                        <li><a class="dropdown-item" href="#">In-Transit</a></li>
-                        <li><a class="dropdown-item" href="#">Delivered</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Cancelled</a></li>
-                    </ul>
-                </div>
 
                 <div class="btn-group">
                     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Action
+                      Update Status
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Processing</a>
+                      <a class="dropdown-item" href="#">In-Transit</a>
+                      <a class="dropdown-item" href="#">Delivered</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
+                      <a class="dropdown-item" href="#">Cancelled</a>
                     </div>
                   </div>
             </td>
