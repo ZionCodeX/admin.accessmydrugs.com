@@ -31,6 +31,7 @@
 
 
         <div class="col-lg-6 col-xl-3 col-sm-6 col-12" style="margin-bottom: 20px; padding-bottom:20px;">
+          <a href="{{ url('users/profile/view/ALL/index'); }}">
           <div class="d-flex align-items-start mb-sm-1 mb-xl-0 border-right-blue-grey border-right-lighten-5">
 
             <span class="card-icon primary d-flex justify-content-center mr-3">
@@ -55,10 +56,12 @@
               <small class="success"><!-- 5.2%--></small>
             </span>
           </div>
+          </a>
         </div>
         
 
         <div class="col-lg-6 col-xl-3 col-sm-6 col-12">
+          <a href="{{ url('users/profile/view/ACTIVATED/index'); }}">
           <div class="d-flex align-items-start mb-sm-1 mb-xl-0 border-right-blue-grey border-right-lighten-5">
             <span class="card-icon danger d-flex justify-content-center mr-3">
             </span>
@@ -81,11 +84,13 @@
               <small class="danger"><!-- 5.2%--></small>
             </span>
           </div>
+          </a>
         </div>
 
 
 
         <div class="col-lg-6 col-xl-3 col-sm-6 col-12">
+          <a href="{{ url('order/processing/index'); }}">
           <div class="d-flex align-items-start border-right-blue-grey border-right-lighten-5">
             <span class="card-icon success d-flex justify-content-center mr-3">
             </span>
@@ -108,11 +113,13 @@
               <small class="success"><i class="fa fa-long-arrow-up"></i> <!-- 5.2%--></small>
             </span>
           </div>
+          </a>
         </div>
 
 
 
         <div class="col-lg-6 col-xl-3 col-sm-6 col-12">
+          <a href="{{ url('order/delivered/index'); }}">
           <div class="d-flex align-items-start">
             <span class="card-icon warning d-flex justify-content-center mr-3">
             </span>
@@ -124,8 +131,8 @@
                 <!--end::Svg Icon-->
               </span>
               <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">
-                  @if(($count_orders_all > 0) && ($count_orders_all != null))
-                          {{ $count_orders_all ?? 0 }} 
+                  @if(($count_orders_delivered > 0) && ($count_orders_delivered != null))
+                          {{ $count_orders_delivered ?? 0 }} 
                   @endif
               </span>
               <span class="font-weight-bold text-muted font-size-sm">Completed Orders</span>
@@ -135,6 +142,7 @@
               <small class="danger"><!-- 5.2%--></small>
             </span>
           </div>
+          </a>
         </div>
 
 
