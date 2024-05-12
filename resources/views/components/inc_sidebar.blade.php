@@ -384,7 +384,7 @@
 <!--|||||||||||||||||||||||||||||||||| LOGOUT ||||||||||||||||||||||||||||||||||-->                  
 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
 
-				  <a href="{{ route('/'); }}" class="menu-link menu-toggle">
+				  <a href="{{ route('/dashboard'); }}" class="menu-link menu-toggle">
 	<span style="color: #99ccff" class="svg-icon menu-icon">
 		<i class="fa fa-power-off"></i>
 	</span>
