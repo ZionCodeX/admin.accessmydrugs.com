@@ -386,7 +386,7 @@
 
 				  <a href="" class="menu-link menu-toggle">
 	<span style="color: #99ccff" class="svg-icon menu-icon">
-		<i class="fa fa-power-off"></i>
+		<i class="fa fa-users"></i>
 	</span>
 					  <span class="menu-text">Drug Refill Requests</span>
 				  </a>
