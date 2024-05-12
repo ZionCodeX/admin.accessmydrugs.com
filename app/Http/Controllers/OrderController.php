@@ -68,6 +68,7 @@ class OrderController extends Controller
             $data['counts'] = DB::table('orders')->where('status','=',$status)->where('xstatus', 1)->count();
             
             //ORDERS COUNTER
+            $data['count_orders_x'] = DB::table('orders')->where('status','=',$status)->where('xstatus', 1)->count();
             $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
             $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
             $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();

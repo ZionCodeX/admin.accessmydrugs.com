@@ -27,7 +27,7 @@
       <div class="card-header">
        <div class="card-title">
         <h3 class="card-label">
-            <b>{{ $status_type ?? '' }}</b> Accounts (<b>{{ $count_x ?? '' }}</b> Customers)
+            <b>{{ $status_type ?? '' }}</b> ORDERS (<b>{{ $count_orders_x ?? '' }}</b> Orders) | {{ $order_status ?? ''}}
          <small></small>
         </h3>
        </div>
