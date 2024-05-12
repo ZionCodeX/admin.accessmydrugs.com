@@ -204,6 +204,21 @@
 										</a>
 									</li>
 
+			<li class="menu-item" aria-haspopup="true">
+										<a href="{{ url('order/paid/index'); }}" class="menu-link">
+											<i class="menu-bullet menu-bullet-dot">
+												<span></span>
+											</i>
+											
+											<span class="menu-text">Paid </span>
+											@if(($count_orders_paid > 0) && ($count_orders_paid != null))
+        									  <span class="menu-label">
+                                                  <span class="label label-rounded label-primary"> {{ $count_orders_paid ?? 0 }} </span>
+                                              </span>
+                                            @endif
+										</a>
+									</li>
+
               <li class="menu-item" aria-haspopup="true">
 										<a href="{{ url('order/processing/index'); }}" class="menu-link">
 											<i class="menu-bullet menu-bullet-dot">
@@ -218,6 +233,7 @@
                                             @endif
 										</a>
 									</li>
+									
 
               <li class="menu-item" aria-haspopup="true">
 										<a href="{{ url('order/in_transit/index'); }}" class="menu-link">
@@ -235,24 +251,6 @@
 										</a>
 									</li>
 									
-									
-									
-									
-			  <li class="menu-item" aria-haspopup="true">
-										<a href="{{ url('order/arrived/index'); }}" class="menu-link">
-											<i class="menu-bullet menu-bullet-dot">
-												<span></span>
-											</i>
-											<span class="menu-text">Arrived </span>
-											
-									        @if(($count_orders_arrived > 0) && ($count_orders_arrived != null))
-        									  <span class="menu-label">
-                                                  <span class="label label-rounded label-primary"> {{ $count_orders_arrived ?? 0 }} </span>
-                                              </span>
-                                            @endif
-                                      
-										</a>
-									</li>
 									
 									
 									

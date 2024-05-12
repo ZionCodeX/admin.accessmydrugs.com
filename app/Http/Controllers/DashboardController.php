@@ -56,14 +56,15 @@ class DashboardController extends Controller
         //$data['user'] = XTR::count(['users','id','=',2]);
         //////////////////// REQUIRED CORE DATA ////////////////////
         
-        //ORDERS COUNTER
-        $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
-        $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
-        $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();
-        $data['count_orders_in_transit'] = DB::table('orders')->where('status','=','in_transit')->where('xstatus', 1)->count();
-        $data['count_orders_arrived'] = DB::table('orders')->where('status','=','arrived')->where('xstatus', 1)->count();
-        $data['count_orders_delivered'] = DB::table('orders')->where('status','=','delivered')->where('xstatus', 1)->count();
-        $data['count_orders_cancelled'] = DB::table('orders')->where('status','=','cancelled')->where('xstatus', 1)->count();
+            //ORDERS COUNTER
+            $data['count_orders_x'] = DB::table('orders')->where('status','=',$status)->where('xstatus', 1)->count();
+            $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
+            $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
+            $data['count_orders_paid'] = DB::table('orders')->where('status','=','paid')->where('xstatus', 1)->count();
+            $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();
+            $data['count_orders_in_transit'] = DB::table('orders')->where('status','=','in_transit')->where('xstatus', 1)->count();
+            $data['count_orders_delivered'] = DB::table('orders')->where('status','=','delivered')->where('xstatus', 1)->count();
+            $data['count_orders_cancelled'] = DB::table('orders')->where('status','=','cancelled')->where('xstatus', 1)->count();
 
         return view('pages/dashboard', $data);
     }

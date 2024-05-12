@@ -71,9 +71,9 @@ class OrderController extends Controller
             $data['count_orders_x'] = DB::table('orders')->where('status','=',$status)->where('xstatus', 1)->count();
             $data['count_orders_all'] = DB::table('orders')->where('xstatus', 1)->count();
             $data['count_orders_attempted'] = DB::table('orders')->where('status','=','attempted')->where('xstatus', 1)->count();
+            $data['count_orders_paid'] = DB::table('orders')->where('status','=','paid')->where('xstatus', 1)->count();
             $data['count_orders_processing'] = DB::table('orders')->where('status','=','processing')->where('xstatus', 1)->count();
             $data['count_orders_in_transit'] = DB::table('orders')->where('status','=','in_transit')->where('xstatus', 1)->count();
-            $data['count_orders_arrived'] = DB::table('orders')->where('status','=','arrived')->where('xstatus', 1)->count();
             $data['count_orders_delivered'] = DB::table('orders')->where('status','=','delivered')->where('xstatus', 1)->count();
             $data['count_orders_cancelled'] = DB::table('orders')->where('status','=','cancelled')->where('xstatus', 1)->count();
             
@@ -110,9 +110,10 @@ class OrderController extends Controller
         //////////////////// REQUIRED CORE DATA ////////////////////
         
         if($status == "attempted"){$old_status = $status; $new_status = 'attempted';}
+        if($status == "paid"){$old_status = $status; $new_status = 'paid';}
         if($status == "processing"){$old_status = $status; $new_status = 'in_transit';}
         if($status == "in_transit"){$old_status = $status; $new_status = 'arrived';}
-        if($status == "arrived"){$old_status = $status; $new_status = 'delivered';}
+        if($status == "delivered"){$old_status = $status; $new_status = 'delivered';}
         if($status == "cancelled"){$old_status = $status; $new_status = 'cancelled';}
         
 
