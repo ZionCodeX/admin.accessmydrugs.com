@@ -44,6 +44,7 @@
             <th scope="col">Product Details</th>
             <th scope="col">Order Status</th>
             <th scope="col">Date </th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -104,7 +105,21 @@
                 @endif
             </td>
             <td>{{ $record->created_at ?? '' }}</td>
-            <td>Details</td>
+
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Update Order Status
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item active" href="#">Processing</a></li>
+                        <li><a class="dropdown-item" href="#">In-Transit</a></li>
+                        <li><a class="dropdown-item" href="#">Delivered</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Cancelled</a></li>
+                    </ul>
+                </div>
+            </td>
         </tr>
     @endforeach
 
