@@ -108,10 +108,10 @@
 
             <td>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{ $loop->iteration }}" data-bs-toggle="dropdown" aria-expanded="false">
                         Update Order Status
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton{{ $loop->iteration }}">
                         <li><a class="dropdown-item active" href="#">Processing</a></li>
                         <li><a class="dropdown-item" href="#">In-Transit</a></li>
                         <li><a class="dropdown-item" href="#">Delivered</a></li>
