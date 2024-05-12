@@ -73,12 +73,12 @@
             
             <td>
                 @if(empty($record->status) || $record->status == null)
-                    <span class="label label-inline label-light-danger font-weight-bold" style="color: grey">
+                    <span class="label label-inline label-light-danger font-weight-bold" style="color: rgb(78, 43, 43)">
                         Attempted
                     </span>
                 @elseif ($record->status == 'ATTEMPTED')
-                    <span class="label label-inline label-light-success font-weight-bold" style="color: green">
-                        Paid
+                    <span class="label label-inline label-light-success font-weight-bold" style="color: rgb(78, 43, 43)">
+                        Attmpted
                     </span>
                 @elseif ($record->status == 'PAID')
                     <span class="label label-inline label-light-success font-weight-bold" style="color: green">
