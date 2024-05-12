@@ -85,11 +85,11 @@
             <div class="card-body" style="box-shadow: 0 3px 3px rgba(0,0,0,0.2);">
               <span class="svg-icon svg-icon-2x svg-icon-info">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Mail-opened.svg-->
-                <i class="fas fa-users-slash icon-3x"></i>
+                <i class="info fa fa-box icon-3x"></i>
                 <!--end::Svg Icon-->
               </span>
               <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">0</span>
-              <span class="font-weight-bold text-muted font-size-sm">Un-Activated Users</span>
+              <span class="font-weight-bold text-muted font-size-sm">Active Orders</span>
             </div>
 
             <span class="inc-dec-percentage">
