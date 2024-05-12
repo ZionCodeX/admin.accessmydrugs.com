@@ -27,6 +27,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
 
+Route::get('/drug/refill', [App\Http\Controllers\AdminStagesController::class, 'admin_action_order_completed_prox'])->name('admin_action_order_completed_prox');
+
+
 //ORDER CONTROLLERS
 Route::get('/order/{status}/index', [App\Http\Controllers\OrderController::class, 'order'])->name('order');
 

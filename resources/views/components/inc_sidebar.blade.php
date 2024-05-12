@@ -233,7 +233,7 @@
                                             @endif
 										</a>
 									</li>
-									
+
 
               <li class="menu-item" aria-haspopup="true">
 										<a href="{{ url('order/in_transit/index'); }}" class="menu-link">
@@ -370,7 +370,37 @@
 						
 						
 						
+		
 						
+<!--**************** SETTINGS SECTION ****************-->
+<li class="menu-section">
+	<h4 class="menu-text">DRUG REFILL</h4>
+	<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+  </li>
+<!--**************** SETTINGS SECTION ****************-->
+
+
+
+<!--|||||||||||||||||||||||||||||||||| LOGOUT ||||||||||||||||||||||||||||||||||-->                  
+<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+
+				  <a href="{{ route('/drug/refill'); }}" class="menu-link menu-toggle">
+	<span style="color: #99ccff" class="svg-icon menu-icon">
+		<i class="fa fa-power-off"></i>
+	</span>
+					  <span class="menu-text">Drug Refill Requests</span>
+				  </a>
+
+			  </li>
+
+
+		  </ul>
+		  <!--end::Menu Nav-->
+	  </div>
+	  <!--end::Menu Container-->
+  </div>
+  <!--end::Aside Menu-->
+
 
 						
 						
