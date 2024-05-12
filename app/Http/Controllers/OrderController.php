@@ -87,7 +87,7 @@ class OrderController extends Controller
             //////////////////// REQUIRED CORE DATA ////////////////////
             
 
-            return view('pages/order_shop', $data);exit;
+            return view('pages/orders_view_status_index', $data);exit;
 
         }
 
