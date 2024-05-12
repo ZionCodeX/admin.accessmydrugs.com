@@ -43,7 +43,11 @@
                   <i class="fas fa-users icon-3x"></i>
                 <!--end::Svg Icon-->
               </span>
-              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">0</span>
+              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">
+                @if(($count_users_registered > 0) && ($count_users_registered != null))
+        					     {{ $count_users_registered ?? 0 }} 
+                @endif
+              </span>
               <span class="font-weight-bold text-muted font-size-sm">Registered Users</span>
             </div>
 
@@ -65,7 +69,11 @@
                   <i class="fas fa-user-check icon-3x"></i>
                 <!--end::Svg Icon-->
               </span>
-              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">0</span>
+              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">
+                  @if(($count_users_activated > 0) && ($count_users_activated != null))
+                          {{ $count_users_activated ?? 0 }} 
+                  @endif
+              </span>
               <span class="font-weight-bold text-muted font-size-sm">Active Users</span>
             </div>            
 
@@ -88,7 +96,11 @@
                 <i class="info fa fa-box icon-3x"></i>
                 <!--end::Svg Icon-->
               </span>
-              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">0</span>
+              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">
+                  @if(($count_orders_processing > 0) && ($count_orders_processing != null))
+                          {{ $count_orders_processing ?? 0 }} 
+                  @endif
+              </span>
               <span class="font-weight-bold text-muted font-size-sm">Active Orders</span>
             </div>
 
@@ -111,7 +123,11 @@
                 <i class="info fa fa-box icon-3x"></i>
                 <!--end::Svg Icon-->
               </span>
-              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">0</span>
+              <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">
+                  @if(($count_orders_all > 0) && ($count_orders_all != null))
+                          {{ $count_orders_all ?? 0 }} 
+                  @endif
+              </span>
               <span class="font-weight-bold text-muted font-size-sm">Completed Orders</span>
             </div>
 
